@@ -1,0 +1,222 @@
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.banner {
+  height: 200px;
+  width: 100%;
+
+  background-image: url('/assets/images/visitbanner.png'); // adjust path if needed
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &-container {
+    height: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-header {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    font-weight: Bold;
+    color: #3e4a3f;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &-text {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #6b756b;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+}
+
+.contact {
+  width: 100%;
+  padding: 60px 20px;
+
+  &-container {
+    max-width: 1300px;
+    margin: auto;
+  }
+
+  &-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  &-col {
+    flex: 1;
+
+    &-info {
+      background-color: #F5F1E8;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+      &-header {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 28px;
+        color: #3e4a3f;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #E6E0D6;
+        padding-bottom: 10px;
+      }
+
+      &-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 18px;
+
+        &-icon {
+          mat-icon {
+            font-size: 22px;
+            color: #7A8471;
+          }
+        }
+
+        &-text {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 14px;
+          color: #6b756b;
+        }
+      }
+    }
+  }
+}
+
+.contact-form {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  flex-direction: column;
+
+  &-header {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: #3e4a3f;
+    margin-bottom: 20px;
+  }
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+
+@media (max-width: 1024px) {
+
+  .banner {
+    &-header {
+      font-size: 40px;
+    }
+
+    &-text {
+      font-size: 1rem;
+      padding: 0 20px;
+    }
+  }
+
+  .contact-row {
+    flex-direction: column;
+  }
+
+  .contact-col {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .banner {
+    height: auto;
+    padding: 40px 0px;
+
+    &-header {
+      font-size: 32px;
+    }
+
+    &-text {
+      font-size: 0.95rem;
+    }
+  }
+
+  .contact {
+    padding: 40px 0px;
+
+    &-row {
+      gap: 20px;
+    }
+
+    &-col-info {
+      padding: 20px;
+
+      &-header {
+        font-size: 22px;
+      }
+
+      &-row {
+        align-items: flex-start;
+
+        &-text {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    padding: 20px;
+
+    &-header {
+      font-size: 22px;
+    }
+  }
+
+  .full-width {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .banner {
+    &-header {
+      font-size: 26px;
+    }
+
+    &-text {
+      font-size: 0.9rem;
+    }
+  }
+
+  .contact-form {
+    &-header {
+      font-size: 20px;
+    }
+  }
+
+  .contact-col-info {
+    &-header {
+      font-size: 20px;
+    }
+  }
+}

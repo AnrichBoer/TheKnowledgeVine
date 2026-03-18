@@ -1,1 +1,77 @@
-<p>contactus works!</p>
+<div class="main">
+    <div class="banner">
+        <div class="banner-container">
+            <div class="banner-header">
+                Get in Touch
+            </div>
+            <div class="banner-text">
+                We'd love to hear from you or welcome you for a visit.
+            </div>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="contact-container">
+            <div class="contact-row">
+                <div class="contact-col">
+                    <div class="contact-col-info">
+                        <div class="contact-col-info-header">
+                            Contact Information
+                        </div>
+                        <div class="contact-col-info-row">
+                            <div class="contact-col-info-row-icon">
+                                <mat-icon>location_on</mat-icon>
+                            </div>
+                            <div class="contact-col-info-row-text">
+                                2 Geelvink Street, Atlasville, Boksburg.
+                            </div>
+                        </div>
+                        <div class="contact-col-info-row">
+                            <div class="contact-col-info-row-icon">
+                                <mat-icon>call</mat-icon>
+                            </div>
+                            <div class="contact-col-info-row-text">
+                                +27 61 304 1993
+                            </div>
+                        </div>
+                        <div class="contact-col-info-row">
+                            <div class="contact-col-info-row-icon">
+                                <mat-icon>email</mat-icon>
+                            </div>
+                            <div class="contact-col-info-row-text">
+                                info@knowledgevinemontessori.co.za
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-col">
+                    <div class="contact-form">
+                        <div class="contact-form-header">
+                            Send Us a Message
+                        </div>
+                        <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Your Name</mat-label>
+                                <input matInput formControlName="name" />
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Your Contact Number</mat-label>
+                                <input matInput formControlName="contactNumber" />
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Your Email</mat-label>
+                                <input matInput formControlName="email" />
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Your Message</mat-label>
+                                <textarea matInput rows="5" formControlName="message"></textarea>
+                            </mat-form-field>
+                            <button mat-raised-button color="primary" type="submit">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

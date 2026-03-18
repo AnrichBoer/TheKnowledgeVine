@@ -1,26 +1,35 @@
 <div class="block">
     <div class="row">
+
+        <!-- Logo -->
         <div class="row-imagecol">
-            <img src="assets/images/logo.png" alt="logo">
+            <img src="assets/images/logo.png" alt="logo" (click)="navHome()">
         </div>
-        <div class="row-col">
-            <div class="row-col-button">
-                Home
-            </div>
-            <div class="row-col-button">
-                About Us
-            </div>
-            <div class="row-col-button">
-                Contact Us
-            </div>
+
+        <!-- Desktop Menu -->
+        <div class="row-col desktop-menu">
+            <div class="row-col-button" (click)="navHome()">Home</div>
+            <div class="row-col-button" (click)="navAboutUs()">About Us</div>
+            <div class="row-col-button" (click)="navtoContactUs()">Contact Us</div>
+
             <div class="row-col-control">
-                <div class="row-col-button1">
-                    Parent Protal
-                </div>
-                <div class="row-col-subtext">
-                    Coming Soon!
-                </div>
+                <div class="row-col-button1" (click)="navParentPortal()">Parent Portal</div>
+                <div class="row-col-subtext">Coming Soon!</div>
             </div>
         </div>
+
+        <!-- Hamburger -->
+        <div class="mobile-menu-icon" (click)="toggleMenu()">
+            <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+        </div>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div class="mobile-menu" [class.open]="menuOpen">
+        <div (click)="navHome()">Home</div>
+        <div>About Us</div>
+        <div (click)="navtoContactUs()">Contact Us</div>
+        <div class="portal">Parent Portal <span>Coming Soon</span></div>
     </div>
 </div>

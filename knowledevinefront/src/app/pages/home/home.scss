@@ -4,7 +4,7 @@
 }
 
 .banner {
-  height: 500px;
+  height: 800px;
   width: 100%;
 
   background-image: url('/assets/images/banner.jpg'); // adjust path if needed
@@ -54,47 +54,364 @@
 }
 
 .tiles {
-  height: 400px;
+  height: 380px;
   width: 100%;
-  
-  border: 1px solid green;
+  margin-bottom: 50px;
+  margin-top: 50px;
 
   &-container {
     height: 100%;
     max-width: 1300px;
     margin: auto;
-    gap: 15px;
+    gap: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-    border: 1px solid red;
   }
 
   &-tile {
-    height: 260px;
-    width: 260px;
+    height: 350px;
+    width: 300px;
     border-radius: 25px;
-    padding: 5px;
+    // padding: 5px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
 
-    border: 1px solid purple;
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    }
 
     &-image {
-      height: 100px;
-      width: 100px;
-      border: 1px solid green;
+      flex: 0 0 50%;
+      width: 100%;
+      border-radius: 25px 25px 0px 0px;
+
+      background-image: url('/assets/images/banner.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
       img {
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
       }
+    }
+
+    &-header {
+      flex: 0 0 10%;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: Bold;
+      color: #3e4a3f;
+      margin-top: 10px;
+    }
+
+    &-paragraph {
+      flex: 0 0 40%;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: #6b756b;
+      padding: 10px;
     }
   }
 }
+
+.why {
+  height: 500px;
+  width: 100%;
+
+  background-image: url('/assets/images/whybanner.png'); // adjust path if needed
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &-container {
+    height: 100%;
+    max-width: 1300px;
+    margin: auto;
+  }
+
+  &-header {
+    flex: 0 0 10%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    font-weight: Bold;
+    color: #3e4a3f;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &-row {
+    height: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+
+    &-col1 {
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
+
+      &-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #6b756b;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &-col2 {
+      width: 70%;
+      position: relative;
+      overflow: hidden;
+
+      background-image:
+        linear-gradient(
+          to right,
+          rgba(254, 250, 244, 1) 0%,
+          rgba(245, 241, 232, 0.95) 20%,
+          rgba(245, 241, 232, 0.75) 35%,
+          rgba(245, 241, 232, 0.3) 50%,
+          rgba(245, 241, 232, 0) 70%
+        ),
+        url('/assets/images/banner2.jpg');
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      border-radius: 12px;
+    }
+  }
+}
+
+.visit {
+  height: 300px;
+  width: 100%;
+
+  background-image: url('/assets/images/visitbanner.png'); // adjust path if needed
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &-container {
+    height: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-header{
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    font-weight: Bold;
+    color: #3e4a3f;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    
+  }
+
+  &-button{
+    margin-top: 50px;
+    height: 50px;
+    width: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #6F8F5F;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 20px;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+    }
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .banner {
+    height: 600px;
+
+    &-col h1 {
+      font-size: 2.2rem;
+    }
+
+    &-col-subtext {
+      font-size: 1rem;
+    }
+  }
+
+  .tiles {
+    height: auto;
+
+    &-container {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    &-tile {
+      width: 45%;
+    }
+  }
+
+  .why {
+    height: auto;
+
+    &-header {
+      font-size: 40px;
+    }
+
+    &-row {
+      flex-direction: column;
+      height: auto;
+
+      &-col1,
+      &-col2 {
+        width: 100%;
+      }
+
+      &-col2 {
+        height: 250px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .visit {
+    &-header {
+      font-size: 40px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .banner {
+    height: auto;
+    padding: 40px 20px;
+
+    &-container {
+      flex-direction: column;
+    }
+
+    &-col {
+      flex: unset;
+
+      &-section {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      &-subtext{
+        width: 80%;
+      }
+    }
+  }
+
+  .tiles {
+
+    &-container {
+      flex-direction: column;
+    }
+
+    &-tile {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .why {
+
+    &-header {
+      font-size: 32px;
+    }
+
+    &-row {
+      padding: 10px;
+
+      &-col1-text {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .visit {
+    height: auto;
+    padding: 40px 0px;
+
+    &-header {
+      font-size: 28px;
+    }
+
+    &-button {
+      width: 200px;
+      font-size: 18px;
+      height: 45px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+
+  .banner {
+    &-col h1 {
+      font-size: 1.5rem;
+    }
+
+    &-col-subtext {
+      font-size: 0.9rem;
+    }
+  }
+
+  .why {
+    &-header {
+      font-size: 26px;
+    }
+  }
+
+  .visit {
+    &-header {
+      font-size: 22px;
+      padding: 10px;
+    }
+
+    &-button {
+      // width: 180px;
+      font-size: 16px;
+    }
+  }
+}
+
