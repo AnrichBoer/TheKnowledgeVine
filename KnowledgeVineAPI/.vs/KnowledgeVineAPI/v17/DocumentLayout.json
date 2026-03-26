@@ -1,25 +1,103 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|c:\\users\\anric\\source\\repos\\knowledgevine\\knowledgevineapi\\knowledgevineapi\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|solutionrelative:knowledgevineapi\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|c:\\users\\anric\\source\\repos\\knowledgevine\\knowledgevineapi\\knowledgevineapi\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|solutionrelative:knowledgevineapi\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|c:\\users\\anric\\source\\repos\\knowledgevine\\knowledgevineapi\\knowledgevineapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|solutionrelative:knowledgevineapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|c:\\users\\anric\\source\\repos\\knowledgevine\\knowledgevineapi\\knowledgevineapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|solutionrelative:knowledgevineapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|c:\\users\\anric\\source\\repos\\knowledgevine\\knowledgevineapi\\knowledgevineapi\\models\\emailrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|solutionrelative:knowledgevineapi\\models\\emailrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|c:\\users\\anric\\source\\repos\\knowledgevine\\knowledgevineapi\\knowledgevineapi\\services\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A344E1F8-C6E9-484A-83DD-1BF4A45E8E03}|KnowledgeVineAPI\\KnowledgeVineAPI.csproj|solutionrelative:knowledgevineapi\\services\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1968,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 2203,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailController.cs",
+              "DocumentMoniker": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\Controllers\\EmailController.cs",
+              "RelativeDocumentMoniker": "KnowledgeVineAPI\\Controllers\\EmailController.cs",
+              "ToolTip": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\Controllers\\EmailController.cs",
+              "RelativeToolTip": "KnowledgeVineAPI\\Controllers\\EmailController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:45:58.075Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\Program.cs",
+              "RelativeDocumentMoniker": "KnowledgeVineAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\Program.cs",
+              "RelativeToolTip": "KnowledgeVineAPI\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T18:24:32.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "KnowledgeVineAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\appsettings.json",
+              "RelativeToolTip": "KnowledgeVineAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-19T18:05:59.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "KnowledgeVineAPI\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\Services\\EmailService.cs",
+              "RelativeToolTip": "KnowledgeVineAPI\\Services\\EmailService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBcAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:47:04.004Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 4043,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 1423,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -36,6 +114,31 @@
             {
               "$type": "Bookmark",
               "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmailRequest.cs",
+              "DocumentMoniker": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\Models\\EmailRequest.cs",
+              "RelativeDocumentMoniker": "KnowledgeVineAPI\\Models\\EmailRequest.cs",
+              "ToolTip": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\Models\\EmailRequest.cs",
+              "RelativeToolTip": "KnowledgeVineAPI\\Models\\EmailRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T18:03:59.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\Services\\IEmailService.cs",
+              "RelativeDocumentMoniker": "KnowledgeVineAPI\\Services\\IEmailService.cs",
+              "ToolTip": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\Services\\IEmailService.cs",
+              "RelativeToolTip": "KnowledgeVineAPI\\Services\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:57:40.048Z"
             }
           ]
         }

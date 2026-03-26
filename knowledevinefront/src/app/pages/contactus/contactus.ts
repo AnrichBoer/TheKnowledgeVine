@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
-
+import { EmailService } from '../../services/email';
 
 @Component({
   selector: 'app-contactus',
@@ -24,31 +24,40 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class Contactus implements OnInit {
   contactForm: any;
 
-  constructor(private fb: FormBuilder) {
-
-
-  }
+  constructor(
+    private fb: FormBuilder,
+    private emailService: EmailService,
+  ) {}
 
   ngOnInit() {
-
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       contactNumber: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       message: ['', Validators.required],
     });
-
   }
 
   submitForm() {
-
     if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
+      const formData = this.contactForm.value;
 
-      
+      const payload = {
+        name: formData.name,
+        contactNumber: formData.contactNumber,
+        email: formData.email,
+        message: formData.message,
+      };
 
-      // call your API here later
+      this.emailService.sendEmail(payload).subscribe({
+        next: () => {
+          alert('Message sent successfully!');
+          this.contactForm.reset();
+        },
+        error: () => {
+          alert('Something went wrong.');
+        },
+      });
     }
-
   }
 }

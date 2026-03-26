@@ -1,0 +1,280 @@
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.banner {
+  height: 300px;
+  width: 100%;
+
+  background-image: url('/assets/images/visitbanner.png'); // adjust path if needed
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &-container {
+    height: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-header {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    font-weight: Bold;
+    color: #3e4a3f;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &-text {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #6b756b;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+}
+
+.block {
+  height: 500px;
+  width: 100%;
+
+  &-con {
+    height: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+
+    &-card {
+      height: 250px;
+      width: 500px;
+      padding: 25px;
+      background-color: #f5f1e8;
+
+      &-header {
+        text-align: center;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 55px;
+        font-weight: Bold;
+        color: #3e4a3f;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      &-par {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 10px;
+        font-size: 1.1rem;
+        font-weight: 300;
+        color: #6b756b;
+        max-width: 800px;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+.envr {
+  height: 1000px;
+  width: 100%;
+
+  background-image: url('/assets/images/visitbanner.png'); // adjust path if needed
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &-container {
+    height: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-header {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    font-weight: Bold;
+    color: #3e4a3f;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  &-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+
+    position: relative;
+
+    img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &-par {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #6b756b;
+    max-width: 1000px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner {
+    height: auto;
+    padding: 60px 0px;
+
+    &-header {
+      font-size: 40px;
+    }
+
+    &-text {
+      font-size: 1rem;
+      padding: 0 20px;
+    }
+  }
+
+  .block {
+    height: auto;
+    padding: 40px 0px;
+
+    &-row {
+      gap: 30px;
+
+      &-card {
+        width: 100%;
+        max-width: 400px;
+
+        &-header {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+
+  .envr {
+    height: auto;
+    padding: 60px 0px;
+
+    &-header {
+      font-size: 40px;
+    }
+
+    &-par {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    &-header {
+      font-size: 32px;
+    }
+
+    &-text {
+      font-size: 0.95rem;
+    }
+  }
+
+  .block {
+    &-row {
+      flex-direction: column; // 🔥 STACK CARDS
+      align-items: center;
+
+      &-card {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+
+        &-header {
+          font-size: 32px;
+        }
+
+        &-par {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+
+  .envr {
+    &-header {
+      font-size: 32px;
+    }
+
+    &-image {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &-par {
+      font-size: 0.95rem;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    &-header {
+      font-size: 26px;
+    }
+  }
+
+  .block {
+    &-row-card {
+      padding: 20px;
+
+      &-header {
+        font-size: 26px;
+      }
+    }
+  }
+
+  .envr {
+    &-header {
+      font-size: 26px;
+    }
+
+    &-par {
+      font-size: 0.9rem;
+    }
+  }
+}

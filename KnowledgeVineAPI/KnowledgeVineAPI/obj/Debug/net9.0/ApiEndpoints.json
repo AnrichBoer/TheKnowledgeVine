@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "KnowledgeVineAPI.Controllers.EmailController",
+    "Method": "SendEmail",
+    "RelativePath": "Email/SendEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "KnowledgeVineAPI.Models.EmailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

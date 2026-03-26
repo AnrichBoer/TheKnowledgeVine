@@ -1,0 +1,11 @@
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\KnowledgeVineAPI.exe
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\appsettings.Development.json
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\appsettings.json
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\KnowledgeVineAPI.dll
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\KnowledgeVineAPI.deps.json
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\KnowledgeVineAPI.runtimeconfig.json
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\KnowledgeVineAPI.pdb
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\obj\Release\net9.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

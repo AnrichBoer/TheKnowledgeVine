@@ -74,7 +74,6 @@
     height: 350px;
     width: 300px;
     border-radius: 25px;
-    // padding: 5px;
 
     display: flex;
     flex-direction: column;
@@ -84,6 +83,7 @@
     border-radius: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
+    overflow: hidden;
 
     &:hover {
       transform: translateY(-4px);
@@ -91,19 +91,16 @@
     }
 
     &-image {
-      flex: 0 0 50%;
       width: 100%;
-      border-radius: 25px 25px 0px 0px;
-
-      background-image: url('/assets/images/banner.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      min-height: 200px; // 🔥 control image height
+      overflow: hidden;
+      margin-bottom: 10px;
 
       img {
-        height: 100%;
         width: 100%;
-        object-fit: contain;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
     }
 
@@ -204,7 +201,7 @@
 }
 
 .visit {
-  height: 300px;
+  height: 250px;
   width: 100%;
 
   background-image: url('/assets/images/visitbanner.png'); // adjust path if needed
@@ -221,7 +218,7 @@
     align-items: center;
   }
 
-  &-header{
+  &-header {
     text-align: center;
     padding-top: 30px;
     font-family: 'Cormorant Garamond', serif;
@@ -231,10 +228,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
-    
   }
 
-  &-button{
+  &-button {
     margin-top: 50px;
     height: 50px;
     width: 230px;
@@ -242,7 +238,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #6F8F5F;
+    background-color: #6f8f5f;
     font-family: 'Cormorant Garamond', serif;
     font-weight: bold;
     font-size: 25px;
@@ -254,11 +250,9 @@
       cursor: pointer;
     }
   }
-
 }
 
 @media (max-width: 1024px) {
-
   .banner {
     height: 600px;
 
@@ -315,7 +309,6 @@
 }
 
 @media (max-width: 768px) {
-
   .banner {
     height: auto;
     padding: 40px 20px;
@@ -335,14 +328,13 @@
         font-size: 1.8rem;
       }
 
-      &-subtext{
+      &-subtext {
         width: 80%;
       }
     }
   }
 
   .tiles {
-
     &-container {
       flex-direction: column;
     }
@@ -354,7 +346,6 @@
   }
 
   .why {
-
     &-header {
       font-size: 32px;
     }
@@ -385,7 +376,6 @@
 }
 
 @media (max-width: 480px) {
-
   .banner {
     &-col h1 {
       font-size: 1.5rem;
@@ -414,4 +404,3 @@
     }
   }
 }
-
