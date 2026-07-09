@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KnowledgeVineAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42ba17facc7a6725dc7e0c6ea6f291e70522926a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2feba3f22bdca93093e2c77729da9dafb1e27c11")]
 [assembly: System.Reflection.AssemblyProductAttribute("KnowledgeVineAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KnowledgeVineAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

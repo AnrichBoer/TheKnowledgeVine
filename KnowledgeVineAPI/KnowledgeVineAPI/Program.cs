@@ -22,7 +22,9 @@ namespace KnowledgeVineAPI
             {
                 options.AddPolicy("AllowAngular",
                     policy => policy
-                        .WithOrigins("http://localhost:4200")
+                        .WithOrigins("http://localhost:4200",
+                        "https://www.knowledgevinemontessori.co.za",
+                        "https://knowledgevinemontessori.co.za")
                         .AllowAnyHeader()
                         .AllowAnyMethod());
             });

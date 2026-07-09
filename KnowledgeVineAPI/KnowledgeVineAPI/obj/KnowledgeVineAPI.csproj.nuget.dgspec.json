@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\KnowledgeVineAPI.csproj": {}
+    "C:\\Users\\anric\\TheKnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\KnowledgeVineAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\KnowledgeVineAPI.csproj": {
+    "C:\\Users\\anric\\TheKnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\KnowledgeVineAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\KnowledgeVineAPI.csproj",
+        "projectUniqueName": "C:\\Users\\anric\\TheKnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\KnowledgeVineAPI.csproj",
         "projectName": "KnowledgeVineAPI",
-        "projectPath": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\KnowledgeVineAPI.csproj",
+        "projectPath": "C:\\Users\\anric\\TheKnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\KnowledgeVineAPI.csproj",
         "packagesPath": "C:\\Users\\anric\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anric\\source\\repos\\KnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\obj\\",
+        "outputPath": "C:\\Users\\anric\\TheKnowledgeVine\\KnowledgeVineAPI\\KnowledgeVineAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -31,6 +31,7 @@
         },
         "frameworks": {
           "net9.0": {
+            "framework": "net9.0",
             "targetAlias": "net9.0",
             "projectReferences": {}
           }
@@ -45,10 +46,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net9.0": {
+          "framework": "net9.0",
           "targetAlias": "net9.0",
           "dependencies": {
             "Swashbuckle.AspNetCore": {
@@ -67,6 +69,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.16, 9.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[9.0.16, 9.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.16, 9.0.16]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.16, 9.0.16]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -75,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

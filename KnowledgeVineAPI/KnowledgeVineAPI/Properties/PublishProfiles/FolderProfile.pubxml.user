@@ -2,8 +2,8 @@
 <!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\anric\source\repos\KnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\bin\Release\net9.0\publish\</_PublishTargetUrl>
-    <History>True|2026-03-26T08:31:24.9168221Z||;</History>
+    <_PublishTargetUrl>C:\Users\anric\TheKnowledgeVine\KnowledgeVineAPI\KnowledgeVineAPI\bin\Release\net9.0\publish\</_PublishTargetUrl>
+    <History>True|2026-05-19T03:45:23.7792588Z||;True|2026-05-09T12:15:18.8743081+02:00||;True|2026-05-09T12:14:44.9693844+02:00||;True|2026-03-26T10:31:24.9168221+02:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

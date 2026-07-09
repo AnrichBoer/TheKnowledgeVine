@@ -38,7 +38,6 @@ namespace KnowledgeVineAPI.Services
                     Name: {request.Name}
                     Contact: {request.ContactNumber}
                     Email: {request.Email}
-
                     Message:
                     {request.Message}
             ",
