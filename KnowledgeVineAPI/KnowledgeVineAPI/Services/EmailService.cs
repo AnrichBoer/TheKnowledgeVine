@@ -1,64 +1,56 @@
-﻿using System.Net;
+using System.Net;
 using System.Net.Mail;
 using KnowledgeVineAPI.Models;
+using Microsoft.Extensions.Options;
 
 namespace KnowledgeVineAPI.Services
 {
     public class EmailService : IEmailService
     {
-        private readonly string _connectionString;
-        private readonly IConfiguration _config;
+        private readonly EmailSettings _settings;
+        private readonly ILogger<EmailService> _logger;
 
-        public EmailService(IConfiguration config)
+        public EmailService(IOptions<EmailSettings> options, ILogger<EmailService> logger)
         {
-            _config = config;
-            _connectionString = _config.GetValue<string>("ConnectionStrings:DefaultConnection");
+            _settings = options.Value;
+            _logger = logger;
         }
 
-        public async Task<bool> SendEmailAsync(EmailRequest request)
+        public async Task SendEmailAsync(
+            EmailRequest request,
+            CancellationToken cancellationToken = default)
         {
             try
             {
-                var smtpHost = _config["EmailSettings:SmtpHost"];
-                var smtpPort = int.Parse(_config["EmailSettings:SmtpPort"]);
-                var fromEmail = _config["EmailSettings:FromEmail"];
-                var password = _config["EmailSettings:Password"];
-
-                var client = new SmtpClient(smtpHost, smtpPort)
+                using var client = new SmtpClient(_settings.SmtpHost, _settings.SmtpPort)
                 {
-                    Credentials = new NetworkCredential(fromEmail, password),
+                    Credentials = new NetworkCredential(_settings.FromEmail, _settings.Password),
                     EnableSsl = true
                 };
 
-                var mailMessage = new MailMessage
+                using var mailMessage = new MailMessage
                 {
-                    From = new MailAddress(fromEmail),
-                    Subject = "New Contact Form Submission",
-                    Body = $@"
-                    Name: {request.Name}
-                    Contact: {request.ContactNumber}
-                    Email: {request.Email}
-                    Message:
-                    {request.Message}
-            ",
+                    From = new MailAddress(_settings.FromEmail, "Knowledge Vine website"),
+                    Subject = $"Website enquiry from {request.Name}",
+                    Body = $@"Name: {request.Name}
+Contact: {request.ContactNumber}
+Email: {request.Email}
+
+Message:
+{request.Message}",
                     IsBodyHtml = false
                 };
 
-                mailMessage.To.Add(fromEmail); // send to yourself
+                mailMessage.To.Add(_settings.FromEmail);
+                mailMessage.ReplyToList.Add(new MailAddress(request.Email, request.Name));
 
-                await client.SendMailAsync(mailMessage);
-
-                return true;
+                await client.SendMailAsync(mailMessage, cancellationToken);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error sending email: {ex.Message}");
-                return false;
+                _logger.LogError(ex, "Failed to send a website enquiry email");
+                throw;
             }
         }
-
-
-
-
     }
 }

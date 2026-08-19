@@ -1,77 +1,139 @@
-<div class="main">
-    <div class="banner">
-        <div class="banner-container">
-            <div class="banner-header">
-                Get in Touch
-            </div>
-            <div class="banner-text">
-                We'd love to hear from you or welcome you for a visit.
-            </div>
+<section class="page-hero" aria-labelledby="contact-title">
+  <div class="container">
+    <p class="eyebrow">We would love to meet you</p>
+    <h1 id="contact-title">Get in touch</h1>
+    <p>Ask a question or tell us you would like to visit our Montessori environment.</p>
+  </div>
+</section>
+
+<section class="section contact" aria-labelledby="contact-details-title">
+  <div class="container contact-grid">
+    <aside class="contact-card">
+      <p class="eyebrow">Contact details</p>
+      <h2 id="contact-details-title">Visit or contact us</h2>
+
+      <address>
+        <a
+          href="https://maps.google.com/?q=2+Geelvink+Street+Atlasville+Boksburg"
+          target="_blank"
+          rel="noopener"
+        >
+          <mat-icon aria-hidden="true">location_on</mat-icon>
+          <span><strong>Knowledge Vine Montessori</strong><br />2 Geelvink Street<br />Atlasville, Boksburg</span>
+        </a>
+
+        <a href="tel:+27613041993">
+          <mat-icon aria-hidden="true">call</mat-icon>
+          <span><strong>Call us</strong><br />+27 61 304 1993</span>
+        </a>
+
+        <a href="mailto:info@knowledgevinemontessori.co.za">
+          <mat-icon aria-hidden="true">email</mat-icon>
+          <span><strong>Email us</strong><br />info&#64;knowledgevinemontessori.co.za</span>
+        </a>
+
+        <a
+          href="https://wa.me/27613041993?text=Hello%20Knowledge%20Vine%20Montessori%2C%20I%27d%20like%20to%20arrange%20a%20visit."
+          target="_blank"
+          rel="noopener"
+        >
+          <mat-icon aria-hidden="true">chat</mat-icon>
+          <span><strong>WhatsApp us</strong><br />Start a conversation</span>
+        </a>
+      </address>
+
+      <p class="appointment-note">
+        <mat-icon aria-hidden="true">schedule</mat-icon>
+        Visits are arranged by appointment so we can give your family our full attention.
+      </p>
+    </aside>
+
+    <div class="form-card">
+      <p class="eyebrow">Enquiry form</p>
+      <h2>Send us a message</h2>
+      <p class="form-intro">Fields marked with an asterisk are required.</p>
+
+      <form [formGroup]="contactForm" (ngSubmit)="submitForm()" novalidate>
+        <mat-form-field appearance="outline">
+          <mat-label>Your name</mat-label>
+          <input matInput type="text" formControlName="name" autocomplete="name" maxlength="100" />
+          @if (contactForm.controls.name.hasError('required')) {
+            <mat-error>Please enter your name.</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Your contact number</mat-label>
+          <input
+            matInput
+            type="tel"
+            inputmode="tel"
+            formControlName="contactNumber"
+            autocomplete="tel"
+            maxlength="30"
+          />
+          @if (contactForm.controls.contactNumber.hasError('required')) {
+            <mat-error>Please enter a contact number.</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Your email</mat-label>
+          <input matInput type="email" inputmode="email" formControlName="email" autocomplete="email" maxlength="254" />
+          @if (contactForm.controls.email.hasError('required')) {
+            <mat-error>Please enter your email address.</mat-error>
+          } @else if (contactForm.controls.email.hasError('email')) {
+            <mat-error>Please enter a valid email address.</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Your message</mat-label>
+          <textarea matInput rows="6" formControlName="message" maxlength="2000"></textarea>
+          <mat-hint align="end">{{ contactForm.controls.message.value.length }}/2000</mat-hint>
+          @if (contactForm.controls.message.hasError('required')) {
+            <mat-error>Please enter a message.</mat-error>
+          } @else if (contactForm.controls.message.hasError('minlength')) {
+            <mat-error>Please add a little more detail.</mat-error>
+          }
+        </mat-form-field>
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input id="website" type="text" formControlName="website" tabindex="-1" autocomplete="off" />
         </div>
-    </div>
-    <div class="contact">
-        <div class="contact-container">
-            <div class="contact-row">
-                <div class="contact-col">
-                    <div class="contact-col-info">
-                        <div class="contact-col-info-header">
-                            Contact Information
-                        </div>
-                        <div class="contact-col-info-row">
-                            <div class="contact-col-info-row-icon">
-                                <mat-icon>location_on</mat-icon>
-                            </div>
-                            <div class="contact-col-info-row-text">
-                                2 Geelvink Street, Atlasville, Boksburg.
-                            </div>
-                        </div>
-                        <div class="contact-col-info-row">
-                            <div class="contact-col-info-row-icon">
-                                <mat-icon>call</mat-icon>
-                            </div>
-                            <div class="contact-col-info-row-text">
-                                +27 61 304 1993
-                            </div>
-                        </div>
-                        <div class="contact-col-info-row">
-                            <div class="contact-col-info-row-icon">
-                                <mat-icon>email</mat-icon>
-                            </div>
-                            <div class="contact-col-info-row-text">
-                                info@knowledgevinemontessori.co.za
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-col">
-                    <div class="contact-form">
-                        <div class="contact-form-header">
-                            Send Us a Message
-                        </div>
-                        <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
-                            <mat-form-field appearance="outline" class="full-width">
-                                <mat-label>Your Name</mat-label>
-                                <input matInput formControlName="name" />
-                            </mat-form-field>
-                            <mat-form-field appearance="outline" class="full-width">
-                                <mat-label>Your Contact Number</mat-label>
-                                <input matInput formControlName="contactNumber" />
-                            </mat-form-field>
-                            <mat-form-field appearance="outline" class="full-width">
-                                <mat-label>Your Email</mat-label>
-                                <input matInput formControlName="email" />
-                            </mat-form-field>
-                            <mat-form-field appearance="outline" class="full-width">
-                                <mat-label>Your Message</mat-label>
-                                <textarea matInput rows="5" formControlName="message"></textarea>
-                            </mat-form-field>
-                            <button mat-raised-button color="primary" type="submit">
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+
+        <div class="privacy-field">
+          <mat-checkbox formControlName="privacyAccepted">
+            I agree that Knowledge Vine Montessori may use these details to respond to my enquiry.
+          </mat-checkbox>
+          <a routerLink="/privacy">Read our privacy notice</a>
+          @if (contactForm.controls.privacyAccepted.touched && contactForm.controls.privacyAccepted.invalid) {
+            <p class="field-error">Please accept this before sending your enquiry.</p>
+          }
         </div>
+
+        @if (statusMessage) {
+          <div
+            class="form-status"
+            [class.success]="submissionStatus === 'success'"
+            [class.error]="submissionStatus === 'error'"
+            [attr.role]="submissionStatus === 'error' ? 'alert' : 'status'"
+            aria-live="polite"
+          >
+            {{ statusMessage }}
+          </div>
+        }
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="submissionStatus === 'sending'"
+        >
+          {{ submissionStatus === 'sending' ? 'Sending…' : 'Send message' }}
+        </button>
+      </form>
     </div>
-</div>
+  </div>
+</section>

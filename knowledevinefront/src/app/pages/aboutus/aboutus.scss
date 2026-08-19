@@ -1,280 +1,97 @@
-.main {
-  height: 100%;
+.page-hero {
+  padding-block: clamp(4.5rem, 10vw, 8rem);
+  background:
+    radial-gradient(circle at 82% 18%, rgba(111, 143, 95, 0.18), transparent 30%),
+    linear-gradient(135deg, var(--cream), var(--sand));
+}
+
+.page-hero-inner {
+  text-align: center;
+}
+
+.page-hero h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 600;
+}
+
+.page-hero p:not(.eyebrow) {
+  max-width: 52rem;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.values {
+  background: var(--surface);
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.value-grid article {
+  position: relative;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.value-grid span {
+  color: var(--olive);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.value-grid h3 {
+  margin: 0.6rem 0 1rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 600;
+}
+
+.value-grid p {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+}
+
+.environment {
+  background: var(--sand);
+}
+
+.environment-grid {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 6rem);
+}
+
+.environment-copy p:not(.eyebrow) {
+  color: var(--ink-soft);
+}
+
+.environment-grid img {
   width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
-.banner {
-  height: 300px;
-  width: 100%;
-
-  background-image: url('/assets/images/visitbanner.png'); // adjust path if needed
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  &-container {
-    height: 100%;
-    max-width: 1300px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 48rem) {
+  .value-grid,
+  .environment-grid {
+    grid-template-columns: 1fr;
   }
 
-  &-header {
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 55px;
-    font-weight: Bold;
-    color: #3e4a3f;
-    margin-bottom: 20px;
-    text-align: center;
+  .environment-copy {
+    order: 1;
   }
 
-  &-text {
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 10px;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: #6b756b;
-    max-width: 800px;
-    line-height: 1.6;
-  }
-}
-
-.block {
-  height: 500px;
-  width: 100%;
-
-  &-con {
-    height: 100%;
-    max-width: 1300px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 30px;
-
-    &-card {
-      height: 250px;
-      width: 500px;
-      padding: 25px;
-      background-color: #f5f1e8;
-
-      &-header {
-        text-align: center;
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 55px;
-        font-weight: Bold;
-        color: #3e4a3f;
-        margin-bottom: 30px;
-        margin-top: 30px;
-        text-align: center;
-      }
-
-      &-par {
-        font-family: 'Montserrat', sans-serif;
-        margin-top: 10px;
-        font-size: 1.1rem;
-        font-weight: 300;
-        color: #6b756b;
-        max-width: 800px;
-        line-height: 1.6;
-      }
-    }
-  }
-}
-
-.envr {
-  height: 1000px;
-  width: 100%;
-
-  background-image: url('/assets/images/visitbanner.png'); // adjust path if needed
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  &-container {
-    height: 100%;
-    max-width: 1300px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &-header {
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 55px;
-    font-weight: Bold;
-    color: #3e4a3f;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    text-align: center;
-  }
-
-  &-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-
-    position: relative;
-
-    img {
-      width: 100%;
-      max-width: 900px;
-      height: auto;
-      border-radius: 20px;
-      object-fit: cover;
-
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    }
-  }
-
-  &-par {
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 10px;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: #6b756b;
-    max-width: 1000px;
-    line-height: 1.6;
-  }
-}
-
-@media (max-width: 1024px) {
-  .banner {
-    height: auto;
-    padding: 60px 0px;
-
-    &-header {
-      font-size: 40px;
-    }
-
-    &-text {
-      font-size: 1rem;
-      padding: 0 20px;
-    }
-  }
-
-  .block {
-    height: auto;
-    padding: 40px 0px;
-
-    &-row {
-      gap: 30px;
-
-      &-card {
-        width: 100%;
-        max-width: 400px;
-
-        &-header {
-          font-size: 40px;
-        }
-      }
-    }
-  }
-
-  .envr {
-    height: auto;
-    padding: 60px 0px;
-
-    &-header {
-      font-size: 40px;
-    }
-
-    &-par {
-      padding: 0 20px;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .banner {
-    &-header {
-      font-size: 32px;
-    }
-
-    &-text {
-      font-size: 0.95rem;
-    }
-  }
-
-  .block {
-    &-row {
-      flex-direction: column; // 🔥 STACK CARDS
-      align-items: center;
-
-      &-card {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-
-        &-header {
-          font-size: 32px;
-        }
-
-        &-par {
-          font-size: 0.95rem;
-        }
-      }
-    }
-  }
-
-  .envr {
-    &-header {
-      font-size: 32px;
-    }
-
-    &-image {
-      img {
-        max-width: 100%;
-      }
-    }
-
-    &-par {
-      font-size: 0.95rem;
-      text-align: center;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .banner {
-    &-header {
-      font-size: 26px;
-    }
-  }
-
-  .block {
-    &-row-card {
-      padding: 20px;
-
-      &-header {
-        font-size: 26px;
-      }
-    }
-  }
-
-  .envr {
-    &-header {
-      font-size: 26px;
-    }
-
-    &-par {
-      font-size: 0.9rem;
-    }
+  .environment-grid img {
+    order: 2;
   }
 }

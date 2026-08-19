@@ -1,222 +1,188 @@
-.main {
-  height: 100%;
-  width: 100%;
+.page-hero {
+  padding-block: clamp(4rem, 9vw, 7rem);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(111, 143, 95, 0.2), transparent 32%),
+    var(--sand);
+  text-align: center;
 }
 
-.banner {
-  height: 200px;
-  width: 100%;
+.page-hero h1 {
+  margin-bottom: 0.8rem;
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 600;
+}
 
-  background-image: url('/assets/images/visitbanner.png'); // adjust path if needed
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  &-container {
-    height: 100%;
-    max-width: 1300px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &-header {
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 55px;
-    font-weight: Bold;
-    color: #3e4a3f;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  &-text {
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 10px;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: #6b756b;
-    max-width: 500px;
-    line-height: 1.6;
-  }
+.page-hero p:not(.eyebrow) {
+  max-width: 42rem;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
 }
 
 .contact {
+  background: var(--surface);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.78fr) minmax(0, 1.22fr);
+  align-items: start;
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+
+.contact-card,
+.form-card {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card {
+  background: var(--sand);
+}
+
+.form-card {
+  background: var(--white);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.15rem, 5vw, 3.25rem);
+  font-weight: 600;
+}
+
+address {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-style: normal;
+}
+
+address a {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+address a:hover {
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+}
+
+address mat-icon,
+.appointment-note mat-icon {
+  color: var(--olive-dark);
+}
+
+address strong {
+  color: var(--ink);
+}
+
+.appointment-note {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.form-intro {
+  margin-bottom: 1.5rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+form {
+  display: grid;
+  gap: 0.35rem;
+}
+
+mat-form-field {
   width: 100%;
-  padding: 60px 20px;
+}
 
-  &-container {
-    max-width: 1300px;
-    margin: auto;
-  }
+.privacy-field {
+  margin: 0.5rem 0 1rem;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
 
-  &-row {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-  }
+.privacy-field a {
+  display: inline-block;
+  margin: 0.35rem 0 0 2.5rem;
+  color: var(--olive-dark);
+  font-weight: 700;
+  text-underline-offset: 0.2rem;
+}
 
-  &-col {
-    flex: 1;
+.field-error {
+  margin: 0.45rem 0 0 2.5rem;
+  color: var(--error);
+  font-size: 0.78rem;
+}
 
-    &-info {
-      background-color: #F5F1E8;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
-      &-header {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 28px;
-        color: #3e4a3f;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #E6E0D6;
-        padding-bottom: 10px;
-      }
+.form-status {
+  margin-bottom: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
 
-      &-row {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 18px;
+.form-status.success {
+  border: 1px solid #87a97a;
+  background: #edf5e9;
+  color: #315b27;
+}
 
-        &-icon {
-          mat-icon {
-            font-size: 22px;
-            color: #7A8471;
-          }
-        }
+.form-status.error {
+  border: 1px solid #d7a4a4;
+  background: #fff0f0;
+  color: var(--error);
+}
 
-        &-text {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 14px;
-          color: #6b756b;
-        }
-      }
-    }
+button[type='submit'] {
+  width: fit-content;
+  min-width: 10rem;
+  min-height: 3rem;
+  margin-top: 0.25rem;
+  border-radius: 999px;
+}
+
+@media (max-width: 52rem) {
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-.contact-form {
-  background: white;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-
-  display: flex;
-  flex-direction: column;
-
-  &-header {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    color: #3e4a3f;
-    margin-bottom: 20px;
-  }
-}
-
-.full-width {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-
-@media (max-width: 1024px) {
-
-  .banner {
-    &-header {
-      font-size: 40px;
-    }
-
-    &-text {
-      font-size: 1rem;
-      padding: 0 20px;
-    }
+@media (max-width: 30rem) {
+  .contact-card,
+  .form-card {
+    padding: 1.25rem;
   }
 
-  .contact-row {
-    flex-direction: column;
+  address a {
+    padding-inline: 0;
   }
 
-  .contact-col {
+  button[type='submit'] {
     width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .banner {
-    height: auto;
-    padding: 40px 0px;
-
-    &-header {
-      font-size: 32px;
-    }
-
-    &-text {
-      font-size: 0.95rem;
-    }
-  }
-
-  .contact {
-    padding: 40px 0px;
-
-    &-row {
-      gap: 20px;
-    }
-
-    &-col-info {
-      padding: 20px;
-
-      &-header {
-        font-size: 22px;
-      }
-
-      &-row {
-        align-items: flex-start;
-
-        &-text {
-          font-size: 13px;
-        }
-      }
-    }
-  }
-
-  .contact-form {
-    padding: 20px;
-
-    &-header {
-      font-size: 22px;
-    }
-  }
-
-  .full-width {
-    margin-bottom: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .banner {
-    &-header {
-      font-size: 26px;
-    }
-
-    &-text {
-      font-size: 0.9rem;
-    }
-  }
-
-  .contact-form {
-    &-header {
-      font-size: 20px;
-    }
-  }
-
-  .contact-col-info {
-    &-header {
-      font-size: 20px;
-    }
   }
 }

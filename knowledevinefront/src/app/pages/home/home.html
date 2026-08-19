@@ -1,114 +1,155 @@
-<div class="main">
+<section class="hero" aria-labelledby="hero-title">
+  <picture class="hero-media" aria-hidden="true">
+    <source media="(max-width: 42rem)" srcset="assets/images/banner-900.jpg" />
+    <img
+      src="assets/images/banner-1800.jpg"
+      alt=""
+      width="1800"
+      height="1200"
+      fetchpriority="high"
+    />
+  </picture>
+  <div class="hero-overlay"></div>
 
-    <div class="banner">
-        <div class="banner-container">
-            <div class="banner-col">
-                <div class="banner-col-section">
-                    <h1>
-                        Nurturing independence,<br />
-                        curiosity, and confidence
-                    </h1>
-                    <p class="banner-col-subtext">
-                        A calm, child-centered environment where every learner grows at their own pace.
-                    </p>
-                </div>
-            </div>
-            <div class="banner-col">
-            </div>
+  <div class="container hero-inner">
+    <div class="hero-card">
+      <p class="eyebrow">Montessori learning in Atlasville, Boksburg</p>
+      <h1 id="hero-title">Nurturing independence, curiosity and confidence</h1>
+      <p class="hero-copy">
+        A calm, child-centred environment where every learner is encouraged to grow at their own pace.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" routerLink="/contact">Book a visit</a>
+        <a
+          class="button button-secondary"
+          href="https://wa.me/27613041993?text=Hello%20Knowledge%20Vine%20Montessori%2C%20I%27d%20like%20to%20arrange%20a%20visit."
+          target="_blank"
+          rel="noopener"
+        >WhatsApp us</a>
+      </div>
+
+      <ul class="hero-facts" aria-label="School overview">
+        <li>Early childhood Montessori</li>
+        <li>Small, attentive classes</li>
+        <li>Visits by appointment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section principles" aria-labelledby="principles-title">
+  <div class="container">
+    <p class="eyebrow">How children flourish here</p>
+    <h2 id="principles-title" class="section-heading">Learning designed around the child</h2>
+    <p class="section-intro">
+      Purposeful routines, hands-on materials and respectful guidance help each child become capable,
+      curious and confident.
+    </p>
+
+    <div class="principle-grid">
+      <article class="principle-card">
+        <img
+          src="assets/images/independence-720.jpg"
+          alt="A child working independently with a practical-life activity"
+          width="720"
+          height="520"
+          loading="lazy"
+        />
+        <div class="principle-content">
+          <h3>Independence</h3>
+          <p>
+            We guide children to do things for themselves, building confidence through daily routines,
+            practical life skills and meaningful choices.
+          </p>
         </div>
+      </article>
+
+      <article class="principle-card">
+        <img
+          src="assets/images/respect-720.jpg"
+          alt="An educator respectfully supporting a child during an activity"
+          width="720"
+          height="520"
+          loading="lazy"
+        />
+        <div class="principle-content">
+          <h3>Respect</h3>
+          <p>
+            Respect is at the heart of our classroom—for self, for others and for the environment we share
+            and care for together.
+          </p>
+        </div>
+      </article>
+
+      <article class="principle-card">
+        <img
+          src="assets/images/hands-on-720.jpg"
+          alt="Children learning through hands-on classroom materials"
+          width="720"
+          height="520"
+          loading="lazy"
+        />
+        <div class="principle-content">
+          <h3>Hands-on learning</h3>
+          <p>
+            Through tactile materials and real-world experiences, children build understanding naturally
+            and joyfully.
+          </p>
+        </div>
+      </article>
+
+      <article class="principle-card">
+        <img
+          src="assets/images/exploration-720.jpg"
+          alt="A child exploring a Montessori learning activity"
+          width="720"
+          height="520"
+          loading="lazy"
+        />
+        <div class="principle-content">
+          <h3>Child-led exploration</h3>
+          <p>
+            Every child follows their own rhythm. We nurture curiosity and allow learning to unfold at a
+            calm, purposeful pace.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section why" aria-labelledby="why-title">
+  <div class="container why-grid">
+    <div class="why-image">
+      <img
+        src="assets/images/classroom-1200.jpg"
+        alt="A Knowledge Vine learner concentrating on a classroom activity"
+        width="1200"
+        height="800"
+        loading="lazy"
+      />
     </div>
 
-    <div class="tiles">
-        <div class="tiles-container">
-
-            <div class="tiles-tile">
-                <div class="tiles-tile-image">
-                    <img src="assets/images/Independence.png" alt="Independence">
-                </div>
-                <div class="tiles-tile-header">
-                    Independence
-                </div>
-                <div class="tiles-tile-paragraph">
-                    We guide children to do things for themselves,
-                    building confidence through daily routines,
-                    practical life skills, and meaningful choices.
-                </div>
-            </div>
-
-            <div class="tiles-tile">
-                <div class="tiles-tile-image">
-                    <img src="assets/images/Respect.png" alt="Respect">
-                </div>
-                <div class="tiles-tile-header">
-                    Respect
-                </div>
-                <div class="tiles-tile-paragraph">
-                    Respect is at the heart of our classroom — for self, for others,
-                    and for the environment we share and care for together.
-                </div>
-            </div>
-
-            <div class="tiles-tile">
-                <div class="tiles-tile-image">
-                    <img src="assets/images/Hands.png" alt="Hands">
-                </div>
-                <div class="tiles-tile-header">
-                    Hands-On Learning
-                </div>
-                <div class="tiles-tile-paragraph">
-                    Children learn best by doing. Through tactile materials and real-world experiences,
-                    understanding grows naturally and joyfully.
-                </div>
-            </div>
-
-            <div class="tiles-tile">
-                <div class="tiles-tile-image">
-                    <img src="assets/images/Exploration.png" alt="Exploration">
-                </div>
-                <div class="tiles-tile-header">
-                    Child-Led Exploration
-                </div>
-                <div class="tiles-tile-paragraph">
-                    Every child follows their own rhythm.
-                    We nurture curiosity and allow learning to unfold at a pace that feels calm and purposeful.
-                </div>
-            </div>
-        </div>
+    <div class="why-copy">
+      <p class="eyebrow">Why Knowledge Vine?</p>
+      <h2 id="why-title" class="section-heading">A thoughtful place to learn and belong</h2>
+      <ul>
+        <li>Prepared Montessori environment</li>
+        <li>Holistic child development</li>
+        <li>Small classes with personal attention</li>
+        <li>Individualised, child-led learning</li>
+      </ul>
+      <a class="text-link" routerLink="/about">Discover our approach <span aria-hidden="true">→</span></a>
     </div>
-    <div class="why">
-        <div class="why-container">
-            <div class="why-header">
-                Why Knowledge Vine?
-            </div>
-            <div class="why-row">
-                <div class="why-row-col1">
-                    <div class="why-row-col1-text">
-                        Prepared Montessori Environment
-                    </div>
-                    <div class="why-row-col1-text">
-                        Holistic Child Development
-                    </div>
-                    <div class="why-row-col1-text">
-                        Small Classes with Personal Attention
-                    </div>
-                    <div class="why-row-col1-text">
-                        Individualised, Child-Led Learning
-                    </div>
-                </div>
-                <div class="why-row-col2">
+  </div>
+</section>
 
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="visit">
-        <div class="visit-container">
-            <div class="visit-header">
-                Come experience the Knowledge Vine difference
-            </div>
-            <div class="visit-button" (click)="navtoContactUs()">
-                Schedule a Visit
-            </div>
-        </div>
-    </div>
-</div>
+<section class="visit" aria-labelledby="visit-title">
+  <div class="container visit-inner">
+    <p class="eyebrow">See the environment for yourself</p>
+    <h2 id="visit-title">Come experience the Knowledge Vine difference</h2>
+    <p>Tell us a little about your family and we will help arrange a suitable time to visit.</p>
+    <a class="button button-primary" routerLink="/contact">Schedule a visit</a>
+  </div>
+</section>

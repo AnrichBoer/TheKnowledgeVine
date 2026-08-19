@@ -1,45 +1,26 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [MatIconModule, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
-  menuOpen: boolean = false;
+  menuOpen = false;
 
-  constructor(private route: Router) {
-
-
-  }
-
-  toggleMenu() {
+  toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
   }
 
-  navtoContactUs() {
-    this.route.navigateByUrl('contact');
+  closeMenu(): void {
     this.menuOpen = false;
   }
 
-  navParentPortal(){
-
-    this.menuOpen = false;
-  }
-
-  navAboutUs(){
-    this.route.navigateByUrl('about');
-    this.menuOpen = false;
-  }
-
-  navHome() {
-    this.route.navigateByUrl('home');
-    this.menuOpen = false;
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    this.closeMenu();
   }
 }

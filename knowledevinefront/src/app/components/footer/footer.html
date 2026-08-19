@@ -1,1 +1,37 @@
-<p>footer works!</p>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <img
+        src="assets/images/logo-640.png"
+        alt="Knowledge Vine Montessori"
+        width="640"
+        height="178"
+        loading="lazy"
+      />
+      <p>A calm Montessori learning community where children grow with independence, curiosity and confidence.</p>
+    </div>
+
+    <nav aria-label="Footer navigation">
+      <h2>Explore</h2>
+      <a routerLink="/home">Home</a>
+      <a routerLink="/about">About Us</a>
+      <a routerLink="/contact">Book a Visit</a>
+      <a routerLink="/privacy">Privacy Notice</a>
+    </nav>
+
+    <div class="footer-contact">
+      <h2>Get in touch</h2>
+      <a href="https://maps.google.com/?q=2+Geelvink+Street+Atlasville+Boksburg" target="_blank" rel="noopener">
+        2 Geelvink Street<br />Atlasville, Boksburg
+      </a>
+      <a href="tel:+27613041993">+27 61 304 1993</a>
+      <a href="mailto:info@knowledgevinemontessori.co.za">info&#64;knowledgevinemontessori.co.za</a>
+      <span>Visits by appointment</span>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>&copy; {{ currentYear }} Knowledge Vine Montessori</span>
+    <span>Atlasville, Boksburg, Gauteng</span>
+  </div>
+</footer>

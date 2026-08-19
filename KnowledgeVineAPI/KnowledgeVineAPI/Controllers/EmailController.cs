@@ -1,14 +1,16 @@
 ﻿using KnowledgeVineAPI.Models;
 using KnowledgeVineAPI.Services;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KnowledgeVineAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
+    [EnableRateLimiting("contact-form")]
     public class EmailController : ControllerBase
     {
-        private IEmailService _emailService;
+        private readonly IEmailService _emailService;
 
         public EmailController(IEmailService emailService)
         {
@@ -16,17 +18,18 @@ namespace KnowledgeVineAPI.Controllers
         }
 
         [HttpPost("SendEmail")]
-        public async Task<IActionResult> SendEmail([FromBody] EmailRequest request)
+        public async Task<IActionResult> SendEmail(
+            [FromBody] EmailRequest request,
+            CancellationToken cancellationToken)
         {
-            try
+            if (!string.IsNullOrWhiteSpace(request.Website))
             {
-                var result = await _emailService.SendEmailAsync(request);
-                return Ok(result);
+                return Ok(new { message = "Thank you. Your enquiry has been received." });
             }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+
+            await _emailService.SendEmailAsync(request, cancellationToken);
+
+            return Ok(new { message = "Thank you. Your enquiry has been sent." });
         }
     }
 }

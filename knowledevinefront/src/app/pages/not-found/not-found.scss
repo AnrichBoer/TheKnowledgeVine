@@ -1,0 +1,20 @@
+.not-found {
+  display: grid;
+  min-height: 65vh;
+  place-items: center;
+  padding-block: 5rem;
+  background: var(--sand);
+  text-align: center;
+}
+
+.not-found h1 {
+  max-width: 48rem;
+  margin: 0 auto 1rem;
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 600;
+}
+
+.not-found p:not(.eyebrow) {
+  margin-bottom: 1.75rem;
+  color: var(--ink-soft);
+}

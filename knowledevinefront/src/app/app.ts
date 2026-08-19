@@ -1,21 +1,17 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Footer } from './components/footer/footer';
 import { Header } from './components/header/header';
-import { Footer } from "./components/footer/footer";
+import { SeoService } from './services/seo';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,
-    Header, 
-    Footer],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('knowledevinefront');
-
-  constructor() {
-    
+  constructor(seo: SeoService) {
+    seo.start();
   }
-  
 }

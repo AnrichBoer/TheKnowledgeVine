@@ -1,0 +1,49 @@
+.page-hero {
+  padding-block: clamp(4rem, 9vw, 7rem);
+  background: var(--sand);
+  text-align: center;
+}
+
+.page-hero h1 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 600;
+}
+
+.page-hero p:not(.eyebrow) {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+}
+
+.privacy-content {
+  background: var(--surface);
+}
+
+.prose {
+  max-width: 50rem;
+}
+
+.prose > p:first-child {
+  margin-bottom: 2.5rem;
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
+.prose h2 {
+  margin: 2rem 0 0.6rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.prose p {
+  color: var(--ink-soft);
+}
+
+.prose a:not(.button) {
+  color: var(--olive-dark);
+  font-weight: 700;
+}
+
+.prose .button {
+  margin-top: 1rem;
+}

@@ -28,13 +28,38 @@
               {
                 "glob": "**/*",
                 "input": "src/assets",
-                "output": "assets"
+                "output": "assets",
+                "ignore": [
+                  "images/banner.jpg",
+                  "images/banner2.jpg",
+                  "images/Env.png",
+                  "images/Exploration.png",
+                  "images/Hands.png",
+                  "images/Independence.png",
+                  "images/logo.png",
+                  "images/Respect.png",
+                  "images/topLogo.png",
+                  "images/visitbanner.png",
+                  "images/whybanner.png",
+                  "services/**"
+                ]
               }
             ],
             "styles": ["src/styles.scss"]
           },
           "configurations": {
             "production": {
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": true,
+                  "removeSpecialComments": true
+                },
+                "fonts": {
+                  "inline": false
+                }
+              },
               "budgets": [
                 {
                   "type": "initial",
@@ -59,6 +84,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "knowledevinefront:build:production"
@@ -85,7 +113,21 @@
               {
                 "glob": "**/*",
                 "input": "src/assets",
-                "output": "assets"
+                "output": "assets",
+                "ignore": [
+                  "images/banner.jpg",
+                  "images/banner2.jpg",
+                  "images/Env.png",
+                  "images/Exploration.png",
+                  "images/Hands.png",
+                  "images/Independence.png",
+                  "images/logo.png",
+                  "images/Respect.png",
+                  "images/topLogo.png",
+                  "images/visitbanner.png",
+                  "images/whybanner.png",
+                  "services/**"
+                ]
               }
             ],
             "styles": ["src/styles.scss"]

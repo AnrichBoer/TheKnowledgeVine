@@ -1,63 +1,92 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder, Validators } from '@angular/forms';
-import { EmailService } from '../../services/email';
+import { RouterLink } from '@angular/router';
+import { finalize } from 'rxjs';
+import { ContactPayload, EmailService } from '../../services/email';
+
+type SubmissionStatus = 'idle' | 'sending' | 'success' | 'error';
 
 @Component({
   selector: 'app-contactus',
   imports: [
-    CommonModule,
     MatIconModule,
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatCheckboxModule,
+    RouterLink,
   ],
   templateUrl: './contactus.html',
   styleUrl: './contactus.scss',
 })
-export class Contactus implements OnInit {
-  contactForm: any;
+export class Contactus {
+  readonly contactForm;
+  submissionStatus: SubmissionStatus = 'idle';
+  statusMessage = '';
 
   constructor(
-    private fb: FormBuilder,
-    private emailService: EmailService,
-  ) {}
-
-  ngOnInit() {
-    this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      contactNumber: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required],
+    private readonly fb: FormBuilder,
+    private readonly emailService: EmailService,
+  ) {
+    this.contactForm = this.fb.nonNullable.group({
+      name: ['', [Validators.required, Validators.maxLength(100)]],
+      contactNumber: ['', [Validators.required, Validators.maxLength(30)]],
+      email: ['', [Validators.required, Validators.email, Validators.maxLength(254)]],
+      message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(2000)]],
+      privacyAccepted: [false, Validators.requiredTrue],
+      website: [''],
     });
   }
 
-  submitForm() {
-    if (this.contactForm.valid) {
-      const formData = this.contactForm.value;
+  submitForm(): void {
+    this.submissionStatus = 'idle';
+    this.statusMessage = '';
 
-      const payload = {
-        name: formData.name,
-        contactNumber: formData.contactNumber,
-        email: formData.email,
-        message: formData.message,
-      };
+    if (this.contactForm.invalid) {
+      this.contactForm.markAllAsTouched();
+      this.statusMessage = 'Please check the highlighted fields before sending your message.';
+      this.submissionStatus = 'error';
+      return;
+    }
 
-      this.emailService.sendEmail(payload).subscribe({
-        next: () => {
-          alert('Message sent successfully!');
-          this.contactForm.reset();
+    this.submissionStatus = 'sending';
+    const payload: ContactPayload = this.contactForm.getRawValue();
+
+    this.emailService
+      .sendEmail(payload)
+      .pipe(
+        finalize(() => {
+          if (this.submissionStatus === 'sending') this.submissionStatus = 'idle';
+        }),
+      )
+      .subscribe({
+        next: (response) => {
+          this.statusMessage = response.message || 'Thank you. Your enquiry has been sent.';
+          this.submissionStatus = 'success';
+          this.contactForm.reset({
+            name: '',
+            contactNumber: '',
+            email: '',
+            message: '',
+            privacyAccepted: false,
+            website: '',
+          });
         },
-        error: () => {
-          alert('Something went wrong.');
+        error: (error: HttpErrorResponse) => {
+          if (error.status === 429) {
+            this.statusMessage = 'Too many messages were sent from this connection. Please wait a few minutes or contact us by phone.';
+          } else {
+            this.statusMessage = 'We could not send your message right now. Please call, email or WhatsApp us instead.';
+          }
+          this.submissionStatus = 'error';
         },
       });
-    }
   }
 }

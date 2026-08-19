@@ -1,39 +1,55 @@
-<div class="block">
-    <div class="row">
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" routerLink="/home" aria-label="Knowledge Vine Montessori home" (click)="closeMenu()">
+      <img
+        src="assets/images/logo-640.png"
+        alt="Knowledge Vine Montessori — A Montessori Learning Community"
+        width="640"
+        height="178"
+      />
+    </a>
 
-        <!-- Logo -->
-        <div class="row-imagecol">
-            <img src="assets/images/logo.png" alt="logo" (click)="navHome()">
-        </div>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a>
+      <a routerLink="/about" routerLinkActive="active">About Us</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+      <span class="portal-disabled" aria-disabled="true">
+        Parent Portal
+        <small>Coming soon</small>
+      </span>
+    </nav>
 
-        <!-- Desktop Menu -->
-        <div class="row-col desktop-menu">
-            <div class="row-col-button" (click)="navHome()">Home</div>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-controls="mobile-navigation"
+      [attr.aria-expanded]="menuOpen"
+      [attr.aria-label]="menuOpen ? 'Close navigation menu' : 'Open navigation menu'"
+      (click)="toggleMenu()"
+    >
+      <mat-icon aria-hidden="true">{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+  </div>
 
-            <div class="row-col-control">
-                <div class="row-col-button" (click)="navAboutUs()">About Us</div>
-                <!-- <div class="row-col-subtext">Coming Soon!</div> -->
-            </div>
-            <div class="row-col-button" (click)="navtoContactUs()">Contact Us</div>
-
-            <div class="row-col-control">
-                <div class="row-col-button1" (click)="navParentPortal()">Parent Portal</div>
-                <div class="row-col-subtext">Coming Soon!</div>
-            </div>
-        </div>
-
-        <!-- Hamburger -->
-        <div class="mobile-menu-icon" (click)="toggleMenu()">
-            <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
-        </div>
-
+  <nav
+    id="mobile-navigation"
+    class="mobile-nav"
+    [class.open]="menuOpen"
+    [attr.aria-hidden]="!menuOpen"
+    aria-label="Mobile navigation"
+  >
+    <div class="container mobile-nav-inner">
+      <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About Us</a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact Us</a>
+      <span class="portal-disabled" aria-disabled="true">
+        Parent Portal
+        <small>Coming soon</small>
+      </span>
     </div>
-
-    <!-- Mobile Dropdown -->
-    <div class="mobile-menu" [class.open]="menuOpen">
-        <div (click)="navHome()">Home</div>
-        <div>About Us</div>
-        <div (click)="navtoContactUs()">Contact Us</div>
-        <div class="portal">Parent Portal <span>Coming Soon</span></div>
-    </div>
-</div>
+  </nav>
+</header>

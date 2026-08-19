@@ -4,8 +4,7 @@ namespace KnowledgeVineAPI.Services
 {
     public interface IEmailService
     {
-        Task<bool> SendEmailAsync(EmailRequest request);
-
+        Task SendEmailAsync(EmailRequest request, CancellationToken cancellationToken = default);
     }
 }
 

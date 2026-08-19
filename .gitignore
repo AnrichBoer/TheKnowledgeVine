@@ -9,6 +9,10 @@
 # User-specific files
 *.suo
 *.user
+appsettings.Local.json
+.env
+.env.*
+!.env.example
 
 # Debug symbols
 *.pdb
