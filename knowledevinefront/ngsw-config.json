@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [{
+    "name": "portal-app-assets",
+    "installMode": "prefetch",
+    "updateMode": "prefetch",
+    "resources": { "files": ["/index.html", "/*.css", "/*.js", "/manifest.webmanifest", "/assets/icons/**", "/assets/images/knowledge-vine-brand.webp", "/assets/images/favicon.png"] }
+  }],
+  "dataGroups": [],
+  "navigationUrls": ["/**", "!/api/**", "!/**/*.*", "!/**/*__*", "!/**/*__*/**"],
+  "navigationRequestStrategy": "performance"
+}

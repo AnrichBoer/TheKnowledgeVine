@@ -1,0 +1,23 @@
+:host { display: block; color: #244634; }
+.portal-page { min-height: 100dvh; background: #faf8f2; }
+.portal-header { display: flex; justify-content: space-between; align-items: center; padding: 22px 5%; border-bottom: 1px solid #e0e3d6; background: #fffdf8; gap: 20px; }
+.portal-header img { display: block; width: 290px; max-width: 100%; height: auto; }
+.account-actions { display: flex; align-items: center; gap: 24px; font-size: 12px; }
+.account-actions button { border: 1px solid #c5cfba; border-radius: 7px; background: transparent; padding: 10px 17px; color: #184f36; cursor: pointer; }
+.portal-content { max-width: 1000px; margin: auto; padding: 65px 28px; }
+.eyebrow { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #7a836e; font-weight: 600; }
+h1, h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; color: #184f36; }
+h1 { font-size: 56px; margin: 10px 0; line-height: 1.1; }
+.welcome { font-size: 13px; line-height: 1.8; color: #74806c; }
+nav { display: flex; gap: 12px; margin: 26px 0; flex-wrap: wrap; }
+nav a { padding: 10px 15px; font-size: 12px; border: 1px solid #d1d8c6; border-radius: 8px; color: #315c41; text-decoration: none; }
+nav a.selected { background: #184f36; color: #fff; }
+.welcome-card { margin: 42px 0 25px; display: flex; gap: 28px; border: 1px solid #d9dfcc; border-radius: 18px; padding: 38px; background: #fffdf8; }
+.card-mark { color: #ae8d47; font-size: 40px; line-height: 1.2; }
+.welcome-card h2 { font-size: 30px; margin: 0 0 10px; }
+.welcome-card p { font-size: 13px; color: #6e7b68; line-height: 1.9; margin-bottom: 0; }
+.welcome-card .account-note { font-size: 11px; margin-top: 22px; overflow-wrap: anywhere; }
+.privacy-note { font-size: 11px; color: #778170; line-height: 1.8; }
+.website-link { display: inline-block; font-size: 12px; color: #315c41; margin-top: 26px; }
+.error { padding: 14px; border-radius: 8px; background: #f7e9e3; color: #813a30; font-size: 12px; }
+@media (max-width: 650px) { .portal-header { padding: 18px; flex-wrap: wrap; } .portal-header img { width: 260px; } .account-actions { width: 100%; justify-content: space-between; } .portal-content { padding: 38px 22px; } h1 { font-size: 43px; } .welcome-card { padding: 25px 20px; gap: 16px; } }

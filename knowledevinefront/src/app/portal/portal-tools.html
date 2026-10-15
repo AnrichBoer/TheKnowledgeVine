@@ -1,0 +1,17 @@
+<div class="portal-tools"><span>Knowledge Vine Portal</span>@if (!pwa.standalone()) { <button type="button" (click)="pwa.helpOpen.set(true)">Add to your phone <span aria-hidden="true">↗</span></button> }</div>
+@if (pwa.connection.disconnected()) { <div class="connection-message" role="status"><strong>{{ pwa.connection.online() ? 'We can’t reach the portal.' : 'You’re offline.' }}</strong> Connect and try again to read notes or save changes. Nothing will be sent automatically. Unsaved work stays only in this open tab.</div> }
+@if (pwa.updateReady()) { <div class="update-message" role="status"><div><strong>A new version is ready.</strong> @if (!pwa.safety.canReload()) { Save or finish your current work before updating. } @else { Update when you’re ready. }</div><button type="button" (click)="pwa.applyUpdate()" [disabled]="!pwa.safety.canReload() || pwa.connection.disconnected()">Update app</button></div> }
+@else if (pwa.updateFailed()) { <p class="connection-message" role="status">The app update couldn’t download. Keep working; we’ll check again when you return.</p> }
+@if (pwa.helpOpen()) {
+  <div class="install-backdrop" (keydown.escape)="pwa.helpOpen.set(false)"><section class="install-dialog" role="dialog" aria-modal="true" aria-labelledby="install-title" cdkTrapFocus [cdkTrapFocusAutoCapture]="true">
+    <div class="dialog-top"><img src="assets/icons/portal-icon-192.png" alt="" width="64" height="64" /><button type="button" (click)="pwa.helpOpen.set(false)" aria-label="Close installation help">Close</button></div>
+    <p class="eyebrow">A LITTLE CLOSER TO THEIR DAY</p><h2 id="install-title">Your school, a tap away.</h2><p>Add <strong>Knowledge Vine Portal</strong> to your home screen, or keep using it in your browser.</p>
+    @if (pwa.preview) { <p class="preview-note">This preview address opens on this computer. Phone installation will use the school’s secure website.</p> }
+    @else if (!pwa.secure) { <p class="preview-note">Open the school’s secure HTTPS portal address before installing the app.</p> }
+    @if (pwa.installAvailable() && pwa.secure) { <button class="primary" type="button" (click)="pwa.install()" [disabled]="pwa.installing() || !pwa.connection.online()">{{ pwa.installing() ? 'Opening your browser…' : 'Install Knowledge Vine Portal' }}</button> }
+    @if (pwa.installNotice()) { <p role="status">{{ pwa.installNotice() }}</p> }
+    <section class="device"><h3>iPhone · Safari</h3><ol><li>Open the portal in Safari.</li><li>Open <strong>Share</strong> and choose <strong>Add to Home Screen</strong>.</li><li>Keep <strong>Open as Web App</strong> on if shown, then tap <strong>Add</strong>.</li></ol></section>
+    <section class="device"><h3>Android · Chrome</h3><ol><li>Open the portal in Chrome.</li><li>Open the <strong>⋮ menu</strong> and choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li><li>Follow the prompts, then open the new home-screen icon.</li></ol></section>
+    <p class="help-note">Menu wording varies by phone. Sign in if asked when opening the app. Notes and account actions need an internet connection. Sessions still end after 30 minutes of inactivity; sign out on shared devices.</p>
+  </section></div>
+}

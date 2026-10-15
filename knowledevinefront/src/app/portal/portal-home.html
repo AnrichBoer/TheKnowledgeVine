@@ -1,0 +1,20 @@
+<div class="portal-page">
+  <header class="portal-header">
+    <a routerLink="/portal"><img src="assets/images/knowledge-vine-brand.webp" alt="The Knowledge Vine Montessori — Portal home" width="1039" height="378" /></a>
+    <div class="account-actions"><span>{{ auth.session()?.name }}</span><button type="button" (click)="logout()" [disabled]="signingOut()">{{ signingOut() ? 'Signing out…' : 'Sign out' }}</button></div>
+  </header>
+  <div class="portal-content">
+    @if (error()) { <p class="error" role="alert">{{ error() }}</p> }
+    <p class="eyebrow">{{ roleLabel }} PORTAL</p>
+    <h1>Welcome, {{ auth.session()?.name?.split(' ')?.[0] }}.</h1>
+    <p class="welcome">A calm place to connect with our school community.</p>
+    @if ((auth.session()?.roles?.length ?? 0) > 1) {
+      <nav aria-label="Your portal views">@for (view of auth.session()?.roles; track view) { <a [routerLink]="'/portal/' + view.toLowerCase()" [class.selected]="view === role">{{ view === 'Admin' ? 'Administrator' : view }}</a> }</nav>
+    }
+    <section class="welcome-card"><div class="card-mark" aria-hidden="true">✦</div><div><h2>You’re in the right place</h2>
+      <p>{{ role === 'Admin' ? 'Your school’s account and student management tools will live here.' : role === 'Teacher' ? 'Your assigned students and daily notes will live here.' : 'Updates from your child’s teachers will live here.' }}</p>
+      <p class="account-note">Signed in as {{ auth.session()?.email }}.</p></div></section>
+    <p class="privacy-note">Your session ends after 30 minutes of inactivity. Please sign out when using a shared device.</p>
+    <a class="website-link" routerLink="/home">Visit the school website ↗</a>
+  </div>
+</div>

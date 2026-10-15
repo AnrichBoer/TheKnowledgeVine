@@ -1,64 +1,26 @@
-﻿using System.Net;
-using System.Net.Mail;
 using KnowledgeVineAPI.Models;
+using KnowledgeVineAPI.Services.Mail;
 
-namespace KnowledgeVineAPI.Services
+namespace KnowledgeVineAPI.Services;
+
+public sealed class EmailService(IEmailTransport transport, IConfiguration configuration, ILogger<EmailService> logger) : IEmailService
 {
-    public class EmailService : IEmailService
+    public async Task<bool> SendEmailAsync(EmailRequest request)
     {
-        private readonly string _connectionString;
-        private readonly IConfiguration _config;
-
-        public EmailService(IConfiguration config)
+        if (!configuration.GetValue("EmailSettings:ContactEnabled", true) || !transport.IsAvailable) return false;
+        var content = new EmailContent(configuration["EmailSettings:FromEmail"]!, "New Contact Form Submission",
+            $"Name: {request.Name}\nContact: {request.ContactNumber}\nEmail: {request.Email}\nMessage:\n{request.Message}",
+            ReplyTo: request.Email.Trim());
+        try
         {
-            _config = config;
-            _connectionString = _config.GetValue<string>("ConnectionStrings:DefaultConnection");
+            await transport.SendAsync(content, CancellationToken.None);
+            return true;
         }
-
-        public async Task<bool> SendEmailAsync(EmailRequest request)
+        catch (Exception error)
         {
-            try
-            {
-                var smtpHost = _config["EmailSettings:SmtpHost"];
-                var smtpPort = int.Parse(_config["EmailSettings:SmtpPort"]);
-                var fromEmail = _config["EmailSettings:FromEmail"];
-                var password = _config["EmailSettings:Password"];
-
-                var client = new SmtpClient(smtpHost, smtpPort)
-                {
-                    Credentials = new NetworkCredential(fromEmail, password),
-                    EnableSsl = true
-                };
-
-                var mailMessage = new MailMessage
-                {
-                    From = new MailAddress(fromEmail),
-                    Subject = "New Contact Form Submission",
-                    Body = $@"
-                    Name: {request.Name}
-                    Contact: {request.ContactNumber}
-                    Email: {request.Email}
-                    Message:
-                    {request.Message}
-            ",
-                    IsBodyHtml = false
-                };
-
-                mailMessage.To.Add(fromEmail); // send to yourself
-
-                await client.SendMailAsync(mailMessage);
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error sending email: {ex.Message}");
-                return false;
-            }
+            // SMTP responses and exception details can contain addresses or credentials.
+            logger.LogWarning("Contact mail delivery failed ({ErrorType})", error.GetType().Name);
+            return false;
         }
-
-
-
-
     }
 }

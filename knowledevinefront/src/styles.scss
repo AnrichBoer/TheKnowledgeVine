@@ -1,106 +1,85 @@
-
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin will define CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
-// Learn more about theming and how to use it for your application's
-// custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
-
+@use './app/portal/portal-admin-workspace';
+@use './app/portal/portal-teacher';
+@use './app/portal/portal-parent';
 html {
-  @include mat.theme((
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
-}
-
-body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$green-palette,
+        tertiary: mat.$yellow-palette,
+      ),
+      typography: Montserrat,
+      density: 0,
+    )
+  );
   color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
-  margin: 0;
-}
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
-
-body {
-  color-scheme: light;
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
-  margin: 0;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-/* ===== Custom Scrollbar ===== */
-
-/* Chrome, Edge, Safari */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--mat-sys-surface);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  transition: background 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.4);
-}
-
-/* Firefox */
-* {
+  scrollbar-color: #8d9b89 #f6f3ed;
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.25) var(--mat-sys-surface);
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
-.mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
-.mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
-  border-color: #6F8F5F !important;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-
-.mat-mdc-button.mat-primary {
-  background-color: #6F8F5F !important;
+body {
+  margin: 0;
+  background: #f8f9fb;
+  color: #3e4a3f;
+  font-family: 'Montserrat', sans-serif;
 }
-
-.mat-mdc-raised-button.mat-primary {
-  background-color: #6F8F5F !important;
-  color: white !important;
+@media(max-width:560px) {
+  .portal-shell :is(app-portal-login,app-portal-password,app-portal-admin-workspace,app-portal-teacher,app-portal-parent) :is(input,textarea,select) { font-size:16px; }
+  .portal-shell :is(app-portal-tools,app-portal-login,app-portal-password,app-portal-admin,app-portal-teacher,app-portal-parent) button { min-height:44px; }
 }
-
+button,
+input,
+textarea {
+  font: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #ba9441;
+  outline-offset: 4px;
+}
+img {
+  max-width: 100%;
+}
+.skip-link {
+  position: fixed;
+  top: -80px;
+  left: 16px;
+  z-index: 2000;
+  background: #fff;
+  color: #184f36;
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+.skip-link:focus {
+  top: 16px;
+}
+.open-day-panel .mat-mdc-dialog-surface {
+  border-radius: 24px;
+  background: #fcf8ef;
+}
+.open-day-backdrop {
+  background: rgba(16, 37, 26, 0.65);
+  backdrop-filter: blur(5px);
+}
+.mat-mdc-form-field {
+  --mdc-outlined-text-field-focus-outline-color: #184f36;
+  --mdc-outlined-text-field-focus-label-text-color: #184f36;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

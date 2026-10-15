@@ -1,4 +1,25 @@
 ### C#
+# Local portal connection details and authentication keys
+.local/
+
+# Private machine settings (copy appsettings.example.json when setting up a clone)
+/KnowledgeVineAPI/KnowledgeVineAPI/appsettings.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Database recovery files and Python bytecode
+backups/
+*.dump
+*.backup
+*.enc
+__pycache__/
+*.py[cod]
+
 # Build results
 [Bb]in/
 [Oo]bj/

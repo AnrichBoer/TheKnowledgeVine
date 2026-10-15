@@ -1,0 +1,6 @@
+*
+!Dockerfile
+!nginx.conf
+!knowledevinefront/
+!knowledevinefront/browser/
+!knowledevinefront/browser/**

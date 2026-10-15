@@ -1,0 +1,18 @@
+DROP FUNCTION IF EXISTS public.portal_teacher_students(uuid, date);
+DROP FUNCTION IF EXISTS public.portal_parent_updates(uuid, uuid, integer, integer);
+DROP FUNCTION IF EXISTS public.portal_save_daily_update(uuid, uuid, date, text, boolean, integer);
+DROP FUNCTION IF EXISTS public.portal_unlink_parent(uuid, uuid, uuid);
+DROP FUNCTION IF EXISTS public.portal_link_parent(uuid, uuid, uuid);
+DROP FUNCTION IF EXISTS public.portal_assign_teacher(uuid, uuid, uuid);
+DROP TRIGGER IF EXISTS daily_updates_check_write ON public.daily_updates;
+DROP TRIGGER IF EXISTS parent_students_check_link ON public.parent_students;
+DROP TRIGGER IF EXISTS students_check_teacher ON public.students;
+DROP TRIGGER IF EXISTS students_stamp_updated_at ON public.students;
+DROP TRIGGER IF EXISTS users_stamp_updated_at ON public.users;
+DROP FUNCTION IF EXISTS public.portal_check_daily_update();
+DROP FUNCTION IF EXISTS public.portal_check_parent_link();
+DROP FUNCTION IF EXISTS public.portal_check_teacher_assignment();
+DROP FUNCTION IF EXISTS public.portal_stamp_updated_at();
+DROP FUNCTION IF EXISTS public.portal_teacher_is_ready(uuid);
+DROP FUNCTION IF EXISTS public.portal_user_is_ready(uuid);
+DROP FUNCTION IF EXISTS public.portal_user_has_role(uuid, text);

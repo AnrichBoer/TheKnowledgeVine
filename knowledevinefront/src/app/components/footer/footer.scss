@@ -1,0 +1,60 @@
+:host {
+  display: block;
+}
+.site-footer {
+  background: #183f30;
+  color: #f7f2e8;
+  padding: 48px 24px 20px;
+  font-size: 13px;
+}
+.footer-content {
+  max-width: 1252px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+.school-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  margin: 0 0 12px;
+}
+.footer-intro p:not(.school-name) {
+  color: #d1dbcf;
+  line-height: 1.7;
+  margin: 5px 0;
+}
+nav,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 8px;
+}
+a {
+  color: #f7f2e8;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+a:hover {
+  text-decoration: underline;
+}
+.footer-bottom {
+  max-width: 1252px;
+  margin: 32px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #42604e;
+  color: #d1dbcf;
+  font-size: 11px;
+}
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}

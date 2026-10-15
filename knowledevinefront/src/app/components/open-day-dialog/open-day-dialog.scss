@@ -1,0 +1,225 @@
+:host {
+  display: block;
+  color: #244934;
+}
+.close-control {
+  position: sticky;
+  top: 0;
+  height: 0;
+  z-index: 1;
+}
+.invitation {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+}
+.close-button {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  z-index: 1;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #d4cbb8;
+  background: #fcf8ef;
+  color: #244934;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.invitation-copy {
+  padding: 38px 36px 30px;
+}
+.eyebrow {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #7e693f;
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+.eyebrow span {
+  margin-right: 6px;
+}
+.invitation-logo {
+  width: 245px;
+  height: auto;
+  display: block;
+  margin: 0 0 22px;
+  mix-blend-mode: multiply;
+}
+.welcome {
+  font-size: 12px;
+  margin: 0 0 2px;
+  color: #596451;
+}
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(54px, 6vw, 76px);
+  line-height: 1;
+  margin: 0;
+}
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 27px;
+  color: #8a713d;
+  margin: 8px 0 20px;
+}
+#open-day-intro {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #596451;
+  margin: 0 0 20px;
+}
+.event-details {
+  border-top: 1px solid #ded5c3;
+  border-bottom: 1px solid #ded5c3;
+  padding: 14px 0;
+  margin-bottom: 22px;
+}
+.event-details > div {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+.event-details > div + div {
+  margin-top: 14px;
+}
+.event-details mat-icon {
+  color: #a68a46;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.event-details p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+}
+.event-details strong {
+  font-weight: 600;
+}
+.event-details span {
+  display: block;
+  font-size: 11px;
+  color: #596451;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.primary-action {
+  border: 0;
+  border-radius: 9px;
+  color: #fff9ed;
+  background: #184f36;
+  padding: 15px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+.primary-action:hover {
+  background: #246346;
+}
+.directions {
+  color: #244934;
+  font-size: 11px;
+  text-align: center;
+  text-underline-offset: 4px;
+}
+.invitation-note {
+  text-align: center;
+  font-size: 10px;
+  color: #727761;
+  margin: 17px 0 0;
+}
+.artwork-panel {
+  background: #184f36;
+  padding: 50px 26px 28px;
+  color: #f8f1df;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tiny-label {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  color: #dcc48c;
+}
+.artwork-heading {
+  text-align: center;
+}
+.artwork-heading p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  line-height: 1.05;
+  margin: 14px 0 25px;
+}
+.artwork-panel > a {
+  text-decoration: none;
+  color: #f8f1df;
+}
+.invitation-artwork {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px #0d2e2580;
+}
+.view-invitation {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  padding: 14px 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.artwork-bottom {
+  text-align: center;
+  color: #dcc48c;
+  font-size: 10px;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+.artwork-bottom > span {
+  display: block;
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+@media (max-width: 700px) {
+  .invitation {
+    grid-template-columns: 1fr;
+  }
+  .invitation-copy {
+    padding: 32px 24px 24px;
+  }
+  .eyebrow {
+    padding-right: 22px;
+    font-size: 8px;
+  }
+  .invitation-logo {
+    width: 220px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: 64px;
+  }
+  .tagline {
+    font-size: 25px;
+    margin-bottom: 14px;
+  }
+  .artwork-panel {
+    padding: 22px 24px;
+  }
+  .artwork-heading,
+  .artwork-bottom {
+    display: none;
+  }
+}

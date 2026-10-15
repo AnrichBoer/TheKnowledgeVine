@@ -1,32 +1,29 @@
-﻿using KnowledgeVineAPI.Models;
+using KnowledgeVineAPI.Models;
 using KnowledgeVineAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KnowledgeVineAPI.Controllers
+namespace KnowledgeVineAPI.Controllers;
+
+[ApiController]
+[Route("[controller]")]
+public class EmailController(IEmailService emailService, ILogger<EmailController> logger) : ControllerBase
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class EmailController : ControllerBase
+    [HttpPost("SendEmail")]
+    public async Task<IActionResult> SendEmail([FromBody] EmailRequest request)
     {
-        private IEmailService _emailService;
-
-        public EmailController(IEmailService emailService)
+        try
         {
-            _emailService = emailService;
+            if (!await emailService.SendEmailAsync(request))
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                    new { success = false, message = "We could not send your enquiry. Please try again later." });
+
+            return Ok(new { success = true });
         }
-
-        [HttpPost("SendEmail")]
-        public async Task<IActionResult> SendEmail([FromBody] EmailRequest request)
+        catch (Exception exception)
         {
-            try
-            {
-                var result = await _emailService.SendEmailAsync(request);
-                return Ok(result);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            logger.LogError(exception, "Contact enquiry could not be sent");
+            return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                new { success = false, message = "We could not send your enquiry. Please try again later." });
         }
     }
 }

@@ -1,406 +1,188 @@
-.main {
-  height: 100%;
-  width: 100%;
-}
-
 .banner {
-  height: 800px;
-  width: 100%;
-
-  background-image: url('/assets/images/banner.jpg'); // adjust path if needed
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  &-container {
-    height: 100%;
-    max-width: 1300px;
-    margin: auto;
-
-    display: flex;
-    flex-direction: row;
-  }
-
-  &-col {
-    flex: 0 0 50%;
-    align-content: center;
-
-    &-section {
-      width: 80%;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(4px);
-      padding: 2rem;
-      border-radius: 12px;
-    }
-
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 500;
-      line-height: 1.2;
-      color: #3e4a3f;
-      margin-bottom: 1rem;
-    }
-
-    &-subtext {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: #6b756b;
-      max-width: 500px;
-      line-height: 1.6;
-    }
-  }
+  min-height: 650px;
+  background: url('/assets/images/banner.webp') center / cover;
+  display: flex;
+  align-items: center;
+  padding: 64px 24px;
 }
-
+.banner-container {
+  width: 100%;
+  max-width: 1252px;
+  margin: auto;
+  display: flex;
+}
+.banner-col {
+  flex: 1;
+}
+.banner-col-section {
+  max-width: 570px;
+  background: #fffffff0;
+  padding: 32px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+}
+.banner h1 {
+  font:
+    500 clamp(32px, 4vw, 48px) / 1.15 'Cormorant Garamond',
+    serif;
+  color: #3e4a3f;
+  margin: 0 0 20px;
+}
+.banner-col-subtext {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #596451;
+  margin: 0;
+}
 .tiles {
-  height: 380px;
-  width: 100%;
-  margin-bottom: 50px;
-  margin-top: 50px;
-
-  &-container {
-    height: 100%;
-    max-width: 1300px;
-    margin: auto;
-    gap: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &-tile {
-    height: 350px;
-    width: 300px;
-    border-radius: 25px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-    overflow: hidden;
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-    }
-
-    &-image {
-      width: 100%;
-      min-height: 200px; // 🔥 control image height
-      overflow: hidden;
-      margin-bottom: 10px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-    }
-
-    &-header {
-      flex: 0 0 10%;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px;
-      font-weight: Bold;
-      color: #3e4a3f;
-      margin-top: 10px;
-    }
-
-    &-paragraph {
-      flex: 0 0 40%;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      font-weight: 300;
-      color: #6b756b;
-      padding: 10px;
-    }
-  }
+  padding: 56px 24px;
 }
-
+.tiles-container {
+  max-width: 1252px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+.tiles-tile {
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 24px #00000008;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.tiles-tile:hover {
+  transform: translateY(-4px);
+}
+.tiles-tile-image {
+  height: 200px;
+  overflow: hidden;
+}
+.tiles-tile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.tiles-tile-header {
+  font:
+    600 28px 'Cormorant Garamond',
+    serif;
+  color: #3e4a3f;
+  margin: 20px 12px 12px;
+  text-align: center;
+}
+.tiles-tile-paragraph {
+  padding: 0 20px 24px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #596451;
+}
 .why {
-  height: 500px;
-  width: 100%;
-
-  background-image: url('/assets/images/whybanner.png'); // adjust path if needed
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  &-container {
-    height: 100%;
-    max-width: 1300px;
-    margin: auto;
-  }
-
-  &-header {
-    flex: 0 0 10%;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 55px;
-    font-weight: Bold;
-    color: #3e4a3f;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  &-row {
-    height: 350px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-
-    &-col1 {
-      width: 35%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 15px;
-
-      &-text {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-        color: #6b756b;
-        padding: 10px;
-        margin-bottom: 10px;
-      }
-    }
-
-    &-col2 {
-      width: 70%;
-      position: relative;
-      overflow: hidden;
-
-      background-image:
-        linear-gradient(
-          to right,
-          rgba(254, 250, 244, 1) 0%,
-          rgba(245, 241, 232, 0.95) 20%,
-          rgba(245, 241, 232, 0.75) 35%,
-          rgba(245, 241, 232, 0.3) 50%,
-          rgba(245, 241, 232, 0) 70%
-        ),
-        url('/assets/images/banner2.jpg');
-
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      border-radius: 12px;
-    }
-  }
+  padding: 48px 24px;
+  background: url('/assets/images/whybanner.webp') center / cover;
 }
-
+.why-container {
+  max-width: 1252px;
+  margin: auto;
+}
+.why-header,
+.visit-header {
+  font:
+    600 clamp(32px, 4vw, 48px) 'Cormorant Garamond',
+    serif;
+  text-align: center;
+  color: #3e4a3f;
+  margin: 0 0 28px;
+}
+.why-row {
+  display: flex;
+  gap: 32px;
+}
+.why-row-col1 {
+  flex: 0 0 36%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.why-row-col1-text {
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 500;
+  color: #596451;
+}
+.why-row-col2 {
+  flex: 1;
+  min-height: 350px;
+  border-radius: 16px;
+  background:
+    linear-gradient(to right, #f5f1e840, transparent),
+    url('/assets/images/banner2.webp') center / cover;
+}
 .visit {
-  height: 250px;
-  width: 100%;
-
-  background-image: url('/assets/images/visitbanner.png'); // adjust path if needed
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  &-container {
-    height: 100%;
-    max-width: 1300px;
-    margin: auto;
-    display: flex;
+  padding: 48px 24px 56px;
+  background: url('/assets/images/visitbanner.webp') center / cover;
+}
+.visit-container {
+  max-width: 1252px;
+  margin: auto;
+  text-align: center;
+}
+.visit-button {
+  display: inline-block;
+  background: #184f36;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.visit-button:hover {
+  background: #246346;
+}
+@media (max-width: 1000px) {
+  .tiles-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .banner-col:nth-child(2) {
+    display: none;
+  }
+  .banner-col {
+    max-width: 570px;
+  }
+}
+@media (max-width: 650px) {
+  .banner {
+    min-height: 490px;
+    padding: 48px 16px;
+  }
+  .banner-col-section {
+    padding: 24px;
+  }
+  .banner-col-subtext {
+    font-size: 13px;
+  }
+  .tiles {
+    padding: 32px 16px;
+  }
+  .tiles-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .tiles-tile-image {
+    height: 220px;
+  }
+  .why {
+    padding: 36px 20px;
+  }
+  .why-row {
     flex-direction: column;
-    align-items: center;
   }
-
-  &-header {
-    text-align: center;
-    padding-top: 30px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 55px;
-    font-weight: Bold;
-    color: #3e4a3f;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  &-button {
-    margin-top: 50px;
-    height: 50px;
-    width: 230px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: #6f8f5f;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: bold;
-    font-size: 25px;
-    border-radius: 20px;
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-      cursor: pointer;
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .banner {
-    height: 600px;
-
-    &-col h1 {
-      font-size: 2.2rem;
-    }
-
-    &-col-subtext {
-      font-size: 1rem;
-    }
-  }
-
-  .tiles {
-    height: auto;
-
-    &-container {
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    &-tile {
-      width: 45%;
-    }
-  }
-
-  .why {
-    height: auto;
-
-    &-header {
-      font-size: 40px;
-    }
-
-    &-row {
-      flex-direction: column;
-      height: auto;
-
-      &-col1,
-      &-col2 {
-        width: 100%;
-      }
-
-      &-col2 {
-        height: 250px;
-        margin-top: 20px;
-      }
-    }
-  }
-
-  .visit {
-    &-header {
-      font-size: 40px;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .banner {
-    height: auto;
-    padding: 40px 20px;
-
-    &-container {
-      flex-direction: column;
-    }
-
-    &-col {
-      flex: unset;
-
-      &-section {
-        width: 100%;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      &-subtext {
-        width: 80%;
-      }
-    }
-  }
-
-  .tiles {
-    &-container {
-      flex-direction: column;
-    }
-
-    &-tile {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .why {
-    &-header {
-      font-size: 32px;
-    }
-
-    &-row {
-      padding: 10px;
-
-      &-col1-text {
-        font-size: 16px;
-      }
-    }
-  }
-
-  .visit {
-    height: auto;
-    padding: 40px 0px;
-
-    &-header {
-      font-size: 28px;
-    }
-
-    &-button {
-      width: 200px;
-      font-size: 18px;
-      height: 45px;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .banner {
-    &-col h1 {
-      font-size: 1.5rem;
-    }
-
-    &-col-subtext {
-      font-size: 0.9rem;
-    }
-  }
-
-  .why {
-    &-header {
-      font-size: 26px;
-    }
-  }
-
-  .visit {
-    &-header {
-      font-size: 22px;
-      padding: 10px;
-    }
-
-    &-button {
-      // width: 180px;
-      font-size: 16px;
-    }
+  .why-row-col2 {
+    flex: auto;
+    min-height: 230px;
   }
 }

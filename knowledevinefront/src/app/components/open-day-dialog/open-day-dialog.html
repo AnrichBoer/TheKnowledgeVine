@@ -1,0 +1,78 @@
+<div class="close-control">
+  <button
+    class="close-button"
+    data-dialog-close
+    type="button"
+    (click)="close()"
+    aria-label="Close open day invitation"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div class="invitation">
+  <div class="invitation-copy">
+    <p class="eyebrow"><span aria-hidden="true">✦</span> A little visit. A world of possibility.</p>
+    <img
+      class="invitation-logo"
+      src="assets/images/logo.webp"
+      alt="Knowledge Vine Montessori"
+      width="398"
+      height="111"
+    />
+    <p class="welcome">You're warmly invited to our</p>
+    <h2 id="open-day-title">Open Day</h2>
+    <p class="tagline">Discover. Explore. Grow.</p>
+    <p id="open-day-intro">
+      Step into our Montessori world. Meet our educators, explore our learning spaces, and see where
+      your child's curiosity can take root.
+    </p>
+    <div class="event-details">
+      <div>
+        <mat-icon aria-hidden="true">calendar_today</mat-icon>
+        <p>
+          <strong>{{ event.dateLabel }}</strong
+          ><span>{{ event.timeLabel }} · {{ event.timezoneLabel }}</span>
+        </p>
+      </div>
+      <div>
+        <mat-icon aria-hidden="true">location_on</mat-icon>
+        <p><strong>2 Geelvink Street</strong><span>Atlasville, Boksburg</span></p>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="primary-action" type="button" (click)="enquire()">
+        Enquire about the open day <span aria-hidden="true">↗</span>
+      </button>
+      <a class="directions" [href]="event.directionsUrl" target="_blank" rel="noopener noreferrer"
+        >Get directions <span aria-hidden="true">↗</span></a
+      >
+    </div>
+    <p class="invitation-note">We look forward to meeting your family.</p>
+  </div>
+  <div class="artwork-panel">
+    <div class="artwork-heading">
+      <span class="tiny-label">THE KNOWLEDGE VINE MONTESSORI</span>
+      <p>Where curiosity<br />takes root.</p>
+    </div>
+    <a
+      [href]="event.artwork"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View the full open day invitation (opens in a new tab)"
+    >
+      <img
+        class="invitation-artwork"
+        [src]="event.artwork"
+        alt="Open day invitation showing children exploring a globe, with green and gold botanical decoration"
+        width="1200"
+        height="802"
+      />
+      <span class="view-invitation"
+        >View the full invitation <span aria-hidden="true">↗</span></span
+      >
+    </a>
+    <div class="artwork-bottom">
+      <span aria-hidden="true">✦</span> Small classes. Meaningful discoveries.
+    </div>
+  </div>
+</div>

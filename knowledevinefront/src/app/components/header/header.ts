@@ -1,45 +1,19 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [RouterLink, RouterLinkActive, MatIconModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
-  menuOpen: boolean = false;
-
-  constructor(private route: Router) {
-
-
-  }
-
+  readonly menuOpen = signal(false);
   toggleMenu() {
-    this.menuOpen = !this.menuOpen;
+    this.menuOpen.update((open) => !open);
   }
-
-  navtoContactUs() {
-    this.route.navigateByUrl('contact');
-    this.menuOpen = false;
-  }
-
-  navParentPortal(){
-
-    this.menuOpen = false;
-  }
-
-  navAboutUs(){
-    this.route.navigateByUrl('about');
-    this.menuOpen = false;
-  }
-
-  navHome() {
-    this.route.navigateByUrl('home');
-    this.menuOpen = false;
+  closeMenu() {
+    this.menuOpen.set(false);
   }
 }

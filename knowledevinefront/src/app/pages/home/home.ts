@@ -1,24 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
- 
-  constructor(private route: Router) {
-    
-    
-  }
-
-  navtoContactUs(){
-    this.route.navigateByUrl('contact');
-  }
-
-  
-
-}
+export class Home {}

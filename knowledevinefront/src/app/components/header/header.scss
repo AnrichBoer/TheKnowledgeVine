@@ -1,159 +1,113 @@
-.block {
+:host {
+  display: block;
+}
+.site-header {
+  background: #fffdf8;
+}
+.header-row {
   max-width: 1300px;
+  min-height: 88px;
   margin: auto;
-}
-
-.row {
-  width: 100%;
+  padding: 12px 24px;
   display: flex;
-  flex-direction: row;
-
-  &-imagecol {
-    height: 80px;
-    flex: 0 0 400px;
-
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  &-col {
-    flex: 1 0 400px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    &-control {
-      text-align: center;
-    }
-
-    &-subtext {
-      font-size: 13px;
-    }
-
-    &-button {
-      height: 30px;
-      width: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      font-weight: bold;
-      color: #8f9061;
-
-      &:hover {
-        cursor: pointer;
-        transition: all 0.3s ease;
-        transform: translateY(-3px);
-      }
-    }
-
-    &-button1 {
-      height: 30px;
-      width: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      color: white;
-      border-radius: 25px;
-      background-color: #8f9061;
-
-      &:hover {
-        cursor: pointer;
-        color: #8f9061;
-        background-color: #fbf5f2;
-        transform: translateY(-3px);
-        transition: all 0.3s ease;
-      }
-    }
-  }
-}
-
-.mobile-menu-icon {
-  display: none;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  mat-icon {
-    font-size: 32px;
-    color: #3e4a3f;
-  }
+  gap: 32px;
 }
-
-.mobile-menu {
+.brand {
+  flex-shrink: 0;
+  width: min(340px, 35vw);
+  display: block;
+}
+.brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 36px;
+  margin-left: auto;
+}
+nav a {
+  color: #536547;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 12px 0;
+  border-bottom: 2px solid transparent;
+}
+nav a:hover,
+nav a.active {
+  color: #184f36;
+  border-color: #aa8b46;
+}
+.portal {
+  text-align: center;
+  color: #536547;
+  white-space: nowrap;
+}
+.portal span {
+  display: block;
+  background: #e5e8d8;
+  border-radius: 24px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.portal small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.menu-toggle {
   display: none;
-  flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-
-  background: #fbf5f2;
-  border-radius: 12px;
-  margin-top: 10px;
-
-  div {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    color: #3e4a3f;
-    text-align: center;
-    padding: 10px;
-
-    &:hover {
-      background: rgba(0,0,0,0.05);
-      border-radius: 8px;
-      cursor: pointer;
-    }
-  }
-
-  .portal {
-    font-weight: bold;
-
-    span {
-      display: block;
-      font-size: 12px;
-      color: #8f9061;
-    }
-  }
+  background: transparent;
+  color: #184f36;
+  border: 0;
+  padding: 10px;
+  border-radius: 8px;
 }
-
-@media (max-width: 1200px) {
-
-  .desktop-menu {
-    display: none;
+@media (max-width: 960px) {
+  .header-row {
+    flex-wrap: wrap;
+    gap: 0;
+    min-height: 80px;
+    padding: 10px 20px;
   }
-
-  .mobile-menu-icon {
-    display: flex;
+  .brand {
+    width: min(300px, calc(100% - 56px));
+  }
+  .menu-toggle {
+    display: inline-flex;
     margin-left: auto;
-    padding-right: 20px;
+    cursor: pointer;
   }
-
-  .row {
-    align-items: center;
-  }
-
-  .mobile-menu {
+  nav {
     display: none;
+    width: 100%;
+    margin: 12px 0 0;
+    padding: 12px 0;
+    border-top: 1px solid #e2dfd3;
+    gap: 4px;
   }
-
-  .mobile-menu.open {
+  nav.open {
     display: flex;
-    animation: slideDown 0.3s ease;
+    flex-direction: column;
+    align-items: stretch;
   }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  nav a {
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .portal {
+    padding: 12px;
+  }
+  .portal span {
+    display: inline-block;
   }
 }

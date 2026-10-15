@@ -1,0 +1,17 @@
+{
+  "id": "/portal/",
+  "name": "Knowledge Vine Portal",
+  "short_name": "Knowledge Vine",
+  "description": "A little window into your child's day at Knowledge Vine Montessori.",
+  "start_url": "/portal/",
+  "scope": "/portal/",
+  "display": "standalone",
+  "background_color": "#faf8f2",
+  "theme_color": "#184f36",
+  "lang": "en-ZA",
+  "icons": [
+    { "src": "/assets/icons/portal-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/portal-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/portal-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

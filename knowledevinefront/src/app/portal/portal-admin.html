@@ -1,0 +1,17 @@
+<div class="admin-shell">
+  <header class="admin-header">
+    <a routerLink="/portal/admin" aria-label="Knowledge Vine portal home"><img src="assets/images/knowledge-vine-brand.webp" alt="The Knowledge Vine Montessori" width="1039" height="378" /></a>
+    <span class="portal-title">School administration</span>
+    <div class="account-actions"><span>{{ auth.session()?.name }}</span><button type="button" (click)="logout()" [disabled]="busy()">{{ busy() ? 'Signing out…' : 'Sign out' }}</button></div>
+  </header>
+  <nav class="admin-nav" aria-label="School administration">
+    <a routerLink="/portal/admin/students" routerLinkActive="selected" ariaCurrentWhenActive="page">Students</a>
+    <a routerLink="/portal/admin/accounts" routerLinkActive="selected" ariaCurrentWhenActive="page">Accounts</a>
+    @if ((auth.session()?.roles?.length ?? 0) > 1) { @for (role of auth.session()?.roles; track role) { @if (role !== 'Admin') { <a [routerLink]="'/portal/' + role.toLowerCase()">{{ role }} view ↗</a> } } }
+  </nav>
+  <div class="admin-content">
+    @if (error()) { <p class="logout-error" role="alert">{{ error() }}</p> }
+    <router-outlet />
+  </div>
+  <footer><span>Sessions end after 30 minutes of inactivity. Sign out on shared devices.</span><a routerLink="/home">School website ↗</a></footer>
+</div>

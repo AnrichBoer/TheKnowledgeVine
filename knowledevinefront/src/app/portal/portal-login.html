@@ -1,0 +1,25 @@
+<section class="auth-page">
+  <div class="auth-story">
+    <a routerLink="/home" class="school-brand"><img src="assets/images/knowledge-vine-brand.webp" alt="The Knowledge Vine Montessori" width="1039" height="378" /></a>
+    <div class="story-copy"><p class="eyebrow">KNOWLEDGE VINE PORTAL</p><h1>A little window<br />into your child's day.</h1><p>A place for our school community to stay connected, one small discovery at a time.</p><div class="story-mark" aria-hidden="true">✦</div><span>Discover. Explore. Grow.</span></div>
+    <a routerLink="/home" class="back-link">← Back to the school website</a>
+  </div>
+  <div class="auth-panel"><div class="auth-card">
+    <!-- <p class="eyebrow">PARENTS · TEACHERS · ADMIN</p><h2>Welcome back</h2><p class="intro">Sign in to your Knowledge Vine account.</p> -->
+    @if (passwordSet) { <p class="message success" role="status">Your password is set. Please sign in.</p> }
+    @if (auth.expired()) { <p class="message" role="status">Your session ended after 30 minutes of inactivity. Please sign in again.</p> }
+    @if (notes.pending()) { <p class="message" role="status">Your unsaved daily note is held in this tab. Sign in with the same account to continue. Closing or refreshing this tab will lose the unsaved copy.</p> }
+    @if (unavailable) { <p class="message" role="status">We couldn't load your session. Check your connection and try signing in.</p> }
+    @if (error()) { <p class="message error" role="alert">{{ error() }}</p> }
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <label for="portal-email">Email address</label><input id="portal-email" type="email" formControlName="email" autocomplete="username" inputmode="email" placeholder="you@example.com" [attr.aria-invalid]="form.controls.email.touched && form.controls.email.invalid" />
+      @if (form.controls.email.touched && form.controls.email.invalid) { <small class="field-error">Enter a valid email address.</small> }
+      <div class="label-row"><label for="portal-password">Password</label><a routerLink="/portal/forgot-password">Forgot password?</a></div>
+      <div class="password-input"><input id="portal-password" [type]="showPassword() ? 'text' : 'password'" formControlName="password" autocomplete="current-password" [attr.aria-invalid]="form.controls.password.touched && form.controls.password.invalid" /><button type="button" (click)="showPassword.set(!showPassword())" [attr.aria-label]="showPassword() ? 'Hide password' : 'Show password'">{{ showPassword() ? 'Hide' : 'Show' }}</button></div>
+      @if (form.controls.password.touched && form.controls.password.invalid) { <small class="field-error">Enter your password.</small> }
+      <button class="primary" type="submit" [disabled]="busy()">{{ busy() ? 'Signing in…' : 'Sign in' }} <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="session-note">For your privacy, sessions end after 30 minutes of inactivity.</p>
+    <div class="help-note"><strong>New to the portal?</strong><p>Use the password-setup link from the school. If you need help, <a href="mailto:info@knowledgevinemontessori.co.za">contact us</a>.</p></div>
+  </div></div>
+</section>

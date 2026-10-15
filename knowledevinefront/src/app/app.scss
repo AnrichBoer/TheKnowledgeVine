@@ -1,27 +1,53 @@
 .main {
-  min-height: 100vh;    
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f8f9fb; 
+  background: #f8f9fb;
 }
-
-.header {
-  height: 80px;
-  width: 100%;
-  position: sticky;     
-  z-index: 1;
-  margin: 0 auto; 
-  background-color: #fbf5f2;
-}
-
 .content {
-  flex: 1 0 auto;              
+  flex: 1;
 }
-
-// .footer {
-//   flex: 0 0 auto;
-//   background: #1e1e2f;
-//   color: #fff;
-//   padding: 1rem 2rem;
-//   text-align: center;
-// }
+.portal-shell { padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); padding-bottom:env(safe-area-inset-bottom); }
+.open-day-banner {
+  background: #184f36;
+  color: #fff9ed;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.open-day-banner strong {
+  color: #e2c787;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.open-day-banner button {
+  background: transparent;
+  color: #fff9ed;
+  border: 0;
+  border-bottom: 1px solid #c4ab73;
+  padding: 3px 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.open-day-banner button span {
+  margin-left: 6px;
+}
+@media (max-width: 650px) {
+  .open-day-banner {
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 11px;
+  }
+  .open-day-banner strong {
+    display: block;
+    margin: 0;
+  }
+}

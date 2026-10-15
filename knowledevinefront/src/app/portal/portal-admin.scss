@@ -1,0 +1,16 @@
+:host { display: block; color: #244634; }
+.admin-shell { min-height: 100dvh; background: #faf8f2; }
+.admin-header { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 22px max(24px, calc((100% - 1200px) / 2)); border-bottom: 1px solid #e0e3d6; background: #fffdf8; }
+.admin-header img { display: block; width: 290px; height: auto; }
+.portal-title { font: 500 28px 'Cormorant Garamond', Georgia, serif; color: #184f36; }
+.account-actions { display: flex; align-items: center; gap: 18px; font-size: 12px; }
+button { border: 1px solid #b9c4ad; background: transparent; border-radius: 8px; padding: 11px 18px; color: #184f36; cursor: pointer; white-space: nowrap; }
+.admin-nav { display: flex; gap: 22px; padding: 0 max(24px, calc((100% - 1200px) / 2)); border-bottom: 1px solid #e0e3d6; background: #fffdf8; }
+.admin-nav a { display: block; padding: 18px 10px 15px; color: #737e6d; border-bottom: 3px solid transparent; text-decoration: none; font-size: 14px; font-weight: 600; }
+.admin-nav a.selected { color: #184f36; border-color: #184f36; }
+.admin-content { max-width: 1248px; margin: auto; padding: 45px 24px 60px; }
+footer { max-width: 1248px; margin: auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 0 24px 30px; font-size: 10px; line-height: 1.8; color: #74806d; }
+footer a { color: #315c41; }
+.logout-error { color: #813a30; font-size: 12px; }
+@media (max-width: 900px) { .portal-title { display: none; } }
+@media (max-width: 650px) { .admin-header { padding: 18px 22px; flex-wrap: wrap; gap: 18px; } .admin-header img { width: 260px; } .account-actions { width: 100%; justify-content: space-between; } .admin-nav { padding: 0 12px; gap: 12px; flex-wrap: wrap; } .admin-content { padding: 30px 20px 45px; } }

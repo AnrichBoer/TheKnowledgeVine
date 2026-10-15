@@ -1,0 +1,17 @@
+Knowledge Vine Montessori
+A fresh start, with a fresh link
+
+Hello Sofia,
+Here is a new link to finish setting up your portal account. Earlier password-setup links no longer work.
+
+Set up your password:
+http://127.0.0.1:8803/portal/setup-password#userId=00000000-0000-0000-0000-000000000000&token=fictional-token
+
+This link expires after 24 hours and can be used once.
+After setting your password, you will return to the sign-in page. Sign in using the email address below.
+
+Sign-in email: parent@example.test
+Sign in: http://127.0.0.1:8803/portal/login
+
+Need help? Contact school@example.test.
+Discover. Explore. Grow.
